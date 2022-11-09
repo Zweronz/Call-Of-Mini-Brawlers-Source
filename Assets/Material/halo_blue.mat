@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: halo_blue
+  m_Shader: {fileID: 4800000, guid: 233cea9333c37e34f98c0cbc2288ece8, type: 3}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _Halo
+      second:
+        m_Texture: {fileID: 2800000, guid: cf4f116f6554a3a408c295fee58fc2dc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: {}
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0, g: 0.3134329, b: 0.58208954, a: 1}

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1357306554674808}
+  m_IsPrefabParent: 1
+--- !u!1 &1357306554674808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4636096406640614}
+  - component: {fileID: 114861365399453544}
+  m_Layer: 0
+  m_Name: missionuicreator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4636096406640614
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1357306554674808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114861365399453544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1357306554674808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0128103e193dd54d8396f15720bbd9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slaughterMissionUIPrefab: {fileID: 1004384276025015, guid: 13fffb289cfd88c499e91f8d41fe371e,
+    type: 2}
+  surviveMissionUIPrefab: {fileID: 1750242233347391, guid: 0842ec585cce7764ab30460bdf753d71,
+    type: 2}
+  escapeMissionUIPrefab: {fileID: 1627276014750176, guid: 970962d09b68c704498491b19d306aae,
+    type: 2}
+  arenaMissionUIPrefab: {fileID: 1348610872753440, guid: 199968d14637b64449ea082aea529316,
+    type: 2}
