@@ -3,24 +3,24 @@
 --- !u!1001 &100100000
 Prefab:
   serializedVersion: 2
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1963248286965226}
+  m_RootGameObject: {fileID: 1673596040475315}
   m_IsPrefabParent: 1
   m_IsExploded: 0
---- !u!1 &1963248286965226
+--- !u!1 &1673596040475315
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4246079007354204}
-  - 114: {fileID: 114499670048255328}
+  - 4: {fileID: 4678028566929553}
+  - 114: {fileID: 114490684119332004}
   m_Layer: 0
   m_Name: IceFrozen
   m_TagString: Untagged
@@ -28,42 +28,42 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4246079007354204
+--- !u!4 &4678028566929553
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1963248286965226}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1673596040475315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4256568784585353}
-  - {fileID: 4276794966701094}
+  - {fileID: 4860520680695198}
+  - {fileID: 4599936525225145}
   m_Father: {fileID: 0}
---- !u!114 &114499670048255328
+--- !u!114 &114490684119332004
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1963248286965226}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1673596040475315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58af4ccf18de1f04ab04595a7617c6aa, type: 3}
+  m_Script: {fileID: 11500000, guid: dd1e4d267044b5ab43785ad28474951f, type: 3}
   m_Name:
   autoPlayWhenStart: 1
   autoPlayWhenEnabled: 0
   autoStopWhenDisabled: 0
-  audioEvent: {fileID: 114639866368111477}
---- !u!1 &1194793648147823
+  audioEvent: {fileID: 114324882979554231}
+--- !u!1 &1006514658799767
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4256568784585353}
-  - 111: {fileID: 111208239712564342}
+  - 4: {fileID: 4860520680695198}
+  - 111: {fileID: 111824161643234256}
   m_Layer: 0
   m_Name: effect_icegun_hit
   m_TagString: Untagged
@@ -71,32 +71,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4256568784585353
+--- !u!4 &4860520680695198
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1194793648147823}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006514658799767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4696517330865937}
-  - {fileID: 4325197643733225}
-  - {fileID: 4540037782904335}
-  - {fileID: 4882501836476940}
-  m_Father: {fileID: 4246079007354204}
---- !u!111 &111208239712564342
+  - {fileID: 4523306263131246}
+  - {fileID: 4707452620194949}
+  - {fileID: 4855297958365875}
+  - {fileID: 4282442191710790}
+  m_Father: {fileID: 4678028566929553}
+--- !u!111 &111824161643234256
 Animation:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1194793648147823}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006514658799767}
   m_Enabled: 1
-  m_Animation: {fileID: 7400000, guid: b64a5b347ace4ef4685fe741d1a25c48, type: 2}
+  m_Animation: {fileID: 7400000, guid: 33760af3c8cb3aa469741cfb77cf0e0a, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: b64a5b347ace4ef4685fe741d1a25c48, type: 2}
+  - {fileID: 7400000, guid: 33760af3c8cb3aa469741cfb77cf0e0a, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -104,16 +104,16 @@ Animation:
   m_UserAABB:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
---- !u!1 &1627415549296052
+--- !u!1 &1243235714841019
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4696517330865937}
-  - 33: {fileID: 33103996351211557}
-  - 23: {fileID: 23864952099215284}
+  - 4: {fileID: 4523306263131246}
+  - 33: {fileID: 33269373340677135}
+  - 23: {fileID: 23350236631442275}
   m_Layer: 0
   m_Name: ice
   m_TagString: Untagged
@@ -121,52 +121,52 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4696517330865937
+--- !u!4 &4523306263131246
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1627415549296052}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1243235714841019}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4256568784585353}
---- !u!33 &33103996351211557
+  m_Father: {fileID: 4860520680695198}
+--- !u!33 &33269373340677135
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1627415549296052}
-  m_Mesh: {fileID: 4300000, guid: 912ccb3f6ed8c554e811d084add5cfa2, type: 2}
---- !u!23 &23864952099215284
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1243235714841019}
+  m_Mesh: {fileID: 4300000, guid: bc37cf1117eb446489565e1a59f147bd, type: 2}
+--- !u!23 &23350236631442275
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1627415549296052}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1243235714841019}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 92a4c3a28bea56d4085e2d6ea14ea5d9, type: 2}
+  - {fileID: 2100000, guid: 5c243ee7fed17c04ab24883092cf1ea0, type: 2}
   m_SubsetIndices: []
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
---- !u!1 &1537063161698222
+--- !u!1 &1560902468469622
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4325197643733225}
-  - 198: {fileID: 198778318230680228}
-  - 199: {fileID: 199675125414052446}
+  - 4: {fileID: 4707452620194949}
+  - 198: {fileID: 198598369408207732}
+  - 199: {fileID: 199842950277173505}
   m_Layer: 0
   m_Name: effect_icegun_hit_03
   m_TagString: Untagged
@@ -174,23 +174,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4325197643733225
+--- !u!4 &4707452620194949
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1537063161698222}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560902468469622}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.16952755, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4256568784585353}
---- !u!198 &198778318230680228
+  m_Father: {fileID: 4860520680695198}
+--- !u!198 &198598369408207732
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1537063161698222}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560902468469622}
   lengthInSec: 2
   startDelay: 0
   speed: 1
@@ -1166,19 +1166,19 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &199675125414052446
+--- !u!199 &199842950277173505
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1537063161698222}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560902468469622}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 24279adceb89c5d43bb55269bc326f6f, type: 2}
+  - {fileID: 2100000, guid: 19fcf69144236d142af06a70b6fc47f7, type: 2}
   m_SubsetIndices: []
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1196,16 +1196,16 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
---- !u!1 &1395521951413867
+--- !u!1 &1064924019543783
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4540037782904335}
-  - 198: {fileID: 198444418367268358}
-  - 199: {fileID: 199953837698090785}
+  - 4: {fileID: 4855297958365875}
+  - 198: {fileID: 198862214541778257}
+  - 199: {fileID: 199749929147143840}
   m_Layer: 0
   m_Name: effect_icegun_hit_02
   m_TagString: Untagged
@@ -1213,23 +1213,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4540037782904335
+--- !u!4 &4855297958365875
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1395521951413867}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064924019543783}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4256568784585353}
---- !u!198 &198444418367268358
+  m_Father: {fileID: 4860520680695198}
+--- !u!198 &198862214541778257
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1395521951413867}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064924019543783}
   lengthInSec: 2
   startDelay: 0
   speed: 1
@@ -2215,19 +2215,19 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &199953837698090785
+--- !u!199 &199749929147143840
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1395521951413867}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064924019543783}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 57efa3db0cbd9434fb4438e77927964e, type: 2}
+  - {fileID: 2100000, guid: 89f929a14757f6743acb779c78532920, type: 2}
   m_SubsetIndices: []
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2245,16 +2245,16 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
---- !u!1 &1057771199816968
+--- !u!1 &1006534272700302
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4882501836476940}
-  - 198: {fileID: 198914895309199066}
-  - 199: {fileID: 199961685039041383}
+  - 4: {fileID: 4282442191710790}
+  - 198: {fileID: 198032658032446038}
+  - 199: {fileID: 199549788147189139}
   m_Layer: 0
   m_Name: effect_icegun_hit_01
   m_TagString: Untagged
@@ -2262,23 +2262,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4882501836476940
+--- !u!4 &4282442191710790
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1057771199816968}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006534272700302}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4256568784585353}
---- !u!198 &198914895309199066
+  m_Father: {fileID: 4860520680695198}
+--- !u!198 &198032658032446038
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1057771199816968}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006534272700302}
   lengthInSec: 2
   startDelay: 0
   speed: 1
@@ -3264,19 +3264,19 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &199961685039041383
+--- !u!199 &199549788147189139
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1057771199816968}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006534272700302}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2bbfec3ed6960ba45b3e792a337fdb2f, type: 2}
+  - {fileID: 2100000, guid: 2595c1d6704d5724a9e10a0d642163ef, type: 2}
   m_SubsetIndices: []
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3294,17 +3294,17 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
---- !u!1 &1584873432621365
+--- !u!1 &1774146179967249
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4276794966701094}
-  - 82: {fileID: 82364249770871101}
-  - 114: {fileID: 114639866368111477}
-  - 114: {fileID: 114965450674368084}
+  - 4: {fileID: 4599936525225145}
+  - 82: {fileID: 82086453130502731}
+  - 114: {fileID: 114324882979554231}
+  - 114: {fileID: 114061581949612756}
   m_Layer: 0
   m_Name: Weap_freeze_hit01
   m_TagString: Untagged
@@ -3312,24 +3312,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4276794966701094
+--- !u!4 &4599936525225145
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1584873432621365}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774146179967249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4246079007354204}
---- !u!82 &82364249770871101
+  m_Father: {fileID: 4678028566929553}
+--- !u!82 &82086453130502731
 AudioSource:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1584873432621365}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774146179967249}
   m_Enabled: 1
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -3379,19 +3379,19 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &114639866368111477
+--- !u!114 &114324882979554231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1584873432621365}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774146179967249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0e454d75ec8146409d6d31b1216acf5, type: 3}
+  m_Script: {fileID: 11500000, guid: e3582d1c7d4196262b5c70e29e7c0f4f, type: 3}
   m_Name:
   isSfx: 1
   audioClips:
-  - {fileID: 8300000, guid: 62e526eab59a88240aefd29acf8c98f5, type: 3}
+  - {fileID: 8300000, guid: 10ea44d3cd23cbc48a0e71801dcad09a, type: 3}
   probability: []
   volumOffset: 0.05
   pitchOffset: 0.05
@@ -3399,15 +3399,15 @@ MonoBehaviour:
   cutoff: 0
   delayTime: 0
   autoDestroy: 0
---- !u!114 &114965450674368084
+--- !u!114 &114061581949612756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1584873432621365}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774146179967249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4507eebce981424d9c5f8727fc5ddc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 64a37e59c578bc44061723623ff7d0f0, type: 3}
   m_Name:
   maxCount: 1
   deltaTime: 0.2

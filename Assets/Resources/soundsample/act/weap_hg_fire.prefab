@@ -2,62 +2,58 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1001 &100100000
 Prefab:
-  m_ObjectHideFlags: 0
   serializedVersion: 2
+  m_ObjectHideFlags: 1
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1253756480074054}
+  m_RootGameObject: {fileID: 1531725285064074}
   m_IsPrefabParent: 1
---- !u!1 &1253756480074054
+  m_IsExploded: 0
+--- !u!1 &1531725285064074
 GameObject:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - component: {fileID: 4928797138951799}
-  - component: {fileID: 82031074306613165}
-  - component: {fileID: 114831991294359972}
+  - 4: {fileID: 4303738242915124}
+  - 82: {fileID: 82380758768894170}
+  - 114: {fileID: 114175368745892155}
   m_Layer: 0
-  m_Name: weap_hg_fire
+  m_Name: Weap_hg_fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4928797138951799
+--- !u!4 &4303738242915124
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1253756480074054}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1531725285064074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82031074306613165
+--- !u!82 &82380758768894170
 AudioSource:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1253756480074054}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1531725285064074}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.85
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 10
@@ -65,78 +61,56 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
-      time: 0.1
+    - time: 0.1
       value: 1
-      inSlope: 0.0000212128
-      outSlope: 0.0000212128
+      inSlope: 2.12128E-05
+      outSlope: 2.12128E-05
       tangentMode: 0
-    - serializedVersion: 2
-      time: 1
+    - time: 1
       value: 0
       inSlope: -0.0056718155
       outSlope: -0.0056718155
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
-      time: 0.33333328
+    - time: 0.33333328
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
-      time: 0
+    - time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &114831991294359972
+--- !u!114 &114175368745892155
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1253756480074054}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1531725285064074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0e454d75ec8146409d6d31b1216acf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Script: {fileID: 11500000, guid: e3582d1c7d4196262b5c70e29e7c0f4f, type: 3}
+  m_Name:
   isSfx: 1
   audioClips:
-  - {fileID: 8300000, guid: 479ab87b8c049b9409d8eb1a7e670de5, type: 3}
-  - {fileID: 8300000, guid: 163d055b18186b54a92dac062f061354, type: 3}
-  - {fileID: 8300000, guid: 9785d575dd46e364db88ef2b2f47470e, type: 3}
+  - {fileID: 8300000, guid: 657fb3b0da8150e4392f9e08f7cdb756, type: 3}
+  - {fileID: 8300000, guid: 5df684a073b7b1c448f03b9a464a50a1, type: 3}
+  - {fileID: 8300000, guid: 5ef87aee035847545b1d188136510408, type: 3}
   probability: []
   volumOffset: 0
   pitchOffset: 0

@@ -1,25 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using System.Diagnostics;
 
 public class GunRepository : IGunRepository, IRepository<string, GunData>
 {
-	[CompilerGenerated]
-	private sealed class _003CInitialize_003Ec__AnonStorey1E
-	{
-		internal string typeName;
-
-		internal bool _003C_003Em__7(GunData data)
-		{
-			return data.typeName == typeName;
-		}
-
-		internal bool _003C_003Em__8(GunData data)
-		{
-			return data.typeName == typeName;
-		}
-	}
-
 	private Dictionary<string, GunData> datas = new Dictionary<string, GunData>();
 
 	private Dictionary<string, List<GunData>> datas2 = new Dictionary<string, List<GunData>>();
@@ -45,11 +29,10 @@ public class GunRepository : IGunRepository, IRepository<string, GunData>
 		string empty = string.Empty;
 		while (list.Count > 0)
 		{
-			_003CInitialize_003Ec__AnonStorey1E _003CInitialize_003Ec__AnonStorey1E = new _003CInitialize_003Ec__AnonStorey1E();
-			_003CInitialize_003Ec__AnonStorey1E.typeName = list[0].typeName;
+			string typeName = list[0].typeName;
 			list2.Clear();
-			list2.AddRange(list.FindAll(_003CInitialize_003Ec__AnonStorey1E._003C_003Em__7));
-			list.RemoveAll(_003CInitialize_003Ec__AnonStorey1E._003C_003Em__8);
+			list2.AddRange(list.FindAll((GunData data) => data.typeName == typeName));
+			list.RemoveAll((GunData data) => data.typeName == typeName);
 			empty = string.Empty;
 			list3.Clear();
 			int num = list2.Count;

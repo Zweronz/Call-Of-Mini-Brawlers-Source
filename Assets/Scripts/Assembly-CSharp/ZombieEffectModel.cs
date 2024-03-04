@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class ZombieEffectModel : MonoBehaviour
@@ -13,17 +12,6 @@ public class ZombieEffectModel : MonoBehaviour
 		public GameObject effectPrefab;
 
 		public Transform point;
-	}
-
-	[CompilerGenerated]
-	private sealed class _003COnAppear_003Ec__AnonStorey2E
-	{
-		internal int appearType;
-
-		internal bool _003C_003Em__52(AppearEffectData data)
-		{
-			return appearType == data.appearType;
-		}
 	}
 
 	public Transform hurtPoint;
@@ -167,9 +155,7 @@ public class ZombieEffectModel : MonoBehaviour
 
 	public void OnAppear(int appearType)
 	{
-		_003COnAppear_003Ec__AnonStorey2E _003COnAppear_003Ec__AnonStorey2E = new _003COnAppear_003Ec__AnonStorey2E();
-		_003COnAppear_003Ec__AnonStorey2E.appearType = appearType;
-		List<AppearEffectData> list = appearEffects.FindAll(_003COnAppear_003Ec__AnonStorey2E._003C_003Em__52);
+		List<AppearEffectData> list = appearEffects.FindAll((AppearEffectData data) => appearType == data.appearType);
 		if (list == null || list.Count <= 0)
 		{
 			return;

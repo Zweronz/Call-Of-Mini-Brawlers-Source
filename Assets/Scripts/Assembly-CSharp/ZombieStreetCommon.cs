@@ -98,6 +98,7 @@ public class ZombieStreetCommon
 	{
 		long num = t / 3600000;
 		long num2 = (t - num * 3600000) / 60000;
-		return string.Concat(str2: ((t - num * 3600000 - num2 * 60000) / 1000).ToString("d2"), str0: num2.ToString("d2"), str1: ":");
+		long num3 = (t - num * 3600000 - num2 * 60000) / 1000;
+		return num2.ToString("d2") + ":" + num3.ToString("d2");
 	}
 }

@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class StartGame : MonoBehaviour
@@ -14,9 +12,6 @@ public class StartGame : MonoBehaviour
 	public GameObject equip;
 
 	public GameObject achieve;
-
-	[CompilerGenerated]
-	private static Action<IAchievement> _003C_003Ef__am_0024cache5;
 
 	private void Awake()
 	{
@@ -49,17 +44,10 @@ public class StartGame : MonoBehaviour
 	private void CalculateAchievements()
 	{
 		List<IAchievement> all = DataCenter.Instance.Achievements.GetAll();
-		if (_003C_003Ef__am_0024cache5 == null)
+		all.ForEach(delegate(IAchievement achievement)
 		{
-			_003C_003Ef__am_0024cache5 = _003CCalculateAchievements_003Em__5B;
-		}
-		all.ForEach(_003C_003Ef__am_0024cache5);
+			achievement.Process();
+		});
 		DataCenter.Instance.Achievements.InitializeAllAchievements();
-	}
-
-	[CompilerGenerated]
-	private static void _003CCalculateAchievements_003Em__5B(IAchievement achievement)
-	{
-		achievement.Process();
 	}
 }

@@ -3,213 +3,236 @@
 --- !u!1001 &100100000
 Prefab:
   serializedVersion: 2
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1191314596514795}
+  m_RootGameObject: {fileID: 1689028480374360}
   m_IsPrefabParent: 1
   m_IsExploded: 0
---- !u!1 &1191314596514795
+--- !u!1 &1689028480374360
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4263374852894615}
-  - 114: {fileID: 114547401309450002}
-  - 114: {fileID: 114789383092485312}
-  - 114: {fileID: 114003367794687243}
-  m_Layer: 0
+  - 4: {fileID: 4099183777929045}
+  - 111: {fileID: 111791240645660412}
+  m_Layer: 8
   m_Name: Light_saber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4263374852894615
+--- !u!4 &4099183777929045
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1191314596514795}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1689028480374360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4341466720869723}
-  - {fileID: 4080961227807399}
+  - {fileID: 4214784544287043}
+  - {fileID: 4892486456223910}
+  - {fileID: 4157396203942640}
+  - {fileID: 4298302144594464}
   m_Father: {fileID: 0}
---- !u!114 &114547401309450002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1191314596514795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c826c99609a5eb244af2ce12012c7fc7, type: 3}
-  m_Name:
---- !u!114 &114789383092485312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1191314596514795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7db624fade1054d81cabc3b42353f2, type: 3}
-  m_Name:
-  interval: 0
---- !u!114 &114003367794687243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1191314596514795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2561284206d14d5489663fc8abf077ed, type: 3}
-  m_Name:
-  attackLayers: 0a0000000e000000
-  animationSubTitle: LightSaber
-  muzzle: {fileID: 0}
---- !u!1 &1978248950305102
-GameObject:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - 4: {fileID: 4341466720869723}
-  - 111: {fileID: 111444082449886354}
-  m_Layer: 0
-  m_Name: Light_saber
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4341466720869723
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1978248950305102}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4161747480199199}
-  m_Father: {fileID: 4263374852894615}
---- !u!111 &111444082449886354
+--- !u!111 &111791240645660412
 Animation:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1978248950305102}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1689028480374360}
   m_Enabled: 1
-  m_Animation: {fileID: 0}
-  m_Animations: []
+  m_Animation: {fileID: 7400000, guid: 8970851dca097c84e8ed28b11be2bc9c, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 8970851dca097c84e8ed28b11be2bc9c, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_CullingType: 1
   m_UserAABB:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
---- !u!1 &1556715510446828
+--- !u!1 &1479052391982659
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4161747480199199}
-  - 33: {fileID: 33654904114078141}
-  - 23: {fileID: 23200700032801347}
-  m_Layer: 0
-  m_Name: Light_saber
+  - 4: {fileID: 4214784544287043}
+  - 137: {fileID: 137307909309882357}
+  m_Layer: 8
+  m_Name: Bone01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4161747480199199
+--- !u!4 &4214784544287043
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1556715510446828}
-  m_LocalRotation: {x: -0.7071068, y: 6.1817246E-08, z: 6.1817246E-08, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -6.443821E-06}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1479052391982659}
+  m_LocalRotation: {x: -0.70710677, y: 6.181725E-08, z: 6.181724E-08, w: 0.7071069}
+  m_LocalPosition: {x: 0, y: 0, z: 7.954849E-11}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4341466720869723}
---- !u!33 &33654904114078141
-MeshFilter:
+  m_Children:
+  - {fileID: 4456736148075299}
+  m_Father: {fileID: 4099183777929045}
+--- !u!137 &137307909309882357
+SkinnedMeshRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1556715510446828}
-  m_Mesh: {fileID: 4300000, guid: 473c38f7d50ffb34aa21d3d1f9c93654, type: 2}
---- !u!23 &23200700032801347
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1556715510446828}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1479052391982659}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 708736b9f406c664a93b74055c0abe1d, type: 2}
-  - {fileID: 2100000, guid: 260a16cb153566a4cb46573fe5a0ba30, type: 2}
+  - {fileID: 2100000, guid: 806fd9d453faf0d46956c6f08b7b377d, type: 2}
+  - {fileID: 2100000, guid: 2d9b00416fe24ec4eaa798a0b130dcb9, type: 2}
   m_SubsetIndices: []
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
---- !u!1 &1898976224938347
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_Mesh: {fileID: 4300000, guid: c600039ff43d5254094ed5298b641158, type: 2}
+  m_Bones:
+  - {fileID: 4214784544287043}
+  - {fileID: 4456736148075299}
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: -0.0032147449, y: 0.0014918856, z: 0.20213082}
+    m_Extent: {x: 0.051361732, y: 0.046479117, z: 0.20204696}
+  m_DirtyAABB: 0
+--- !u!1 &1480768511962011
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4080961227807399}
-  - 198: {fileID: 198713954407696949}
-  - 199: {fileID: 199090028311644846}
-  m_Layer: 0
-  m_Name: light_saber
+  - 4: {fileID: 4456736148075299}
+  m_Layer: 8
+  m_Name: Dummy02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4080961227807399
+--- !u!4 &4456736148075299
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1898976224938347}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.270412E-07, z: 1.9045599}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1480768511962011}
+  m_LocalRotation: {x: 0.70710677, y: -6.1817246E-08, z: -6.181724E-08, w: 0.7071069}
+  m_LocalPosition: {x: -2.3835854E-15, y: 4.1215813E-08, z: 0.31369603}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4263374852894615}
---- !u!198 &198713954407696949
+  m_Father: {fileID: 4214784544287043}
+--- !u!1 &1641072956659258
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4892486456223910}
+  m_Layer: 8
+  m_Name: Dummy01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4892486456223910
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1641072956659258}
+  m_LocalRotation: {x: 2.1855694E-08, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2.1542783E-10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4099183777929045}
+--- !u!1 &1197754923505087
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4157396203942640}
+  m_Layer: 8
+  m_Name: Light_saber
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4157396203942640
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1197754923505087}
+  m_LocalRotation: {x: -0.7071068, y: 6.1817246E-08, z: 6.1817246E-08, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -6.443821E-06}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4099183777929045}
+--- !u!1 &1716307704691977
+GameObject:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - 4: {fileID: 4298302144594464}
+  - 198: {fileID: 198007455042816216}
+  - 199: {fileID: 199507934353307286}
+  - 111: {fileID: 111458975639656808}
+  m_Layer: 8
+  m_Name: Light_saber@chuqiao
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4298302144594464
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1716307704691977}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.28692058, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4099183777929045}
+--- !u!198 &198007455042816216
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1898976224938347}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1716307704691977}
   lengthInSec: 5
   startDelay: 0
   speed: 1
@@ -381,7 +404,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 0.35
+      scalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1255,19 +1278,19 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &199090028311644846
+--- !u!199 &199507934353307286
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1898976224938347}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1716307704691977}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 5a73e828db6309b479e66c962476a015, type: 2}
+  - {fileID: 2100000, guid: 4c9f51fe6b66c61438c2575ef9884bdd, type: 2}
   m_SubsetIndices: []
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1277,7 +1300,7 @@ ParticleSystemRenderer:
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
-  m_LengthScale: 5.1
+  m_LengthScale: 0
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_SortMode: 0
@@ -1285,3 +1308,22 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+--- !u!111 &111458975639656808
+Animation:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1716307704691977}
+  m_Enabled: 1
+  m_Animation: {fileID: 7400000, guid: a99babb42fbdc874f849e66451888729, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a99babb42fbdc874f849e66451888729, type: 2}
+  - {fileID: 7400000, guid: 8970851dca097c84e8ed28b11be2bc9c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+  m_UserAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}

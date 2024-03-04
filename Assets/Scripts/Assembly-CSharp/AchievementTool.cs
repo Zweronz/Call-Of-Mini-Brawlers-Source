@@ -1,15 +1,7 @@
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 public static class AchievementTool
 {
-	[CompilerGenerated]
-	private static Action<IAchievement> _003C_003Ef__am_0024cache0;
-
-	[CompilerGenerated]
-	private static Action<IAchievement> _003C_003Ef__am_0024cache1;
-
 	public static void InitializeAllAchievements()
 	{
 		DataCenter.Instance.Achievements.InitializeAllAchievements();
@@ -18,22 +10,20 @@ public static class AchievementTool
 	public static void CalculateAchievements()
 	{
 		List<IAchievement> all = DataCenter.Instance.Achievements.GetAll();
-		if (_003C_003Ef__am_0024cache0 == null)
+		all.ForEach(delegate(IAchievement achievement)
 		{
-			_003C_003Ef__am_0024cache0 = _003CCalculateAchievements_003Em__2;
-		}
-		all.ForEach(_003C_003Ef__am_0024cache0);
+			achievement.Process();
+		});
 		InitializeAllAchievements();
 	}
 
 	public static void ClearAchievements()
 	{
 		List<IAchievement> all = DataCenter.Instance.Achievements.GetAll();
-		if (_003C_003Ef__am_0024cache1 == null)
+		all.ForEach(delegate(IAchievement achievement)
 		{
-			_003C_003Ef__am_0024cache1 = _003CClearAchievements_003Em__3;
-		}
-		all.ForEach(_003C_003Ef__am_0024cache1);
+			achievement.Clear();
+		});
 	}
 
 	public static int GetKillAllZombieCount()
@@ -208,17 +198,5 @@ public static class AchievementTool
 			}
 		}
 		return num;
-	}
-
-	[CompilerGenerated]
-	private static void _003CCalculateAchievements_003Em__2(IAchievement achievement)
-	{
-		achievement.Process();
-	}
-
-	[CompilerGenerated]
-	private static void _003CClearAchievements_003Em__3(IAchievement achievement)
-	{
-		achievement.Clear();
 	}
 }

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
@@ -15,7 +14,10 @@ public class TestGameCenterFriend : MonoBehaviour
 
 	private void Start()
 	{
-		GameCenterModel.LoadFriendScores(GameCenterLeaderboardTimeScope.AllTime, 1, 50, string.Empty, true, false, _003CStart_003Em__5A);
+		GameCenterModel.LoadFriendScores(GameCenterLeaderboardTimeScope.AllTime, 1, 50, string.Empty, true, false, delegate(List<GameCenterModel.FriendScore> friendScores)
+		{
+			Show(friendScores);
+		});
 	}
 
 	private void ShowFriends(List<IUserProfile> friends)
@@ -83,11 +85,5 @@ public class TestGameCenterFriend : MonoBehaviour
 		FriendPrefab component = gameObject.GetComponent<FriendPrefab>();
 		component.Set(image, id, name, score);
 		return gameObject.GetComponent<TUIControl>();
-	}
-
-	[CompilerGenerated]
-	private void _003CStart_003Em__5A(List<GameCenterModel.FriendScore> friendScores)
-	{
-		Show(friendScores);
 	}
 }

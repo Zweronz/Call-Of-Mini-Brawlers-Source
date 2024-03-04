@@ -1,33 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Event;
 using UnityEngine;
 
 public class ZS_GroupObjectBind : MonoBehaviour
 {
-	[CompilerGenerated]
-	private sealed class _003CBindSelectBtnAfterEquipItem_003Ec__AnonStorey31
-	{
-		internal ZS_EquipBtnItemShowInfo bindItem;
-
-		internal bool _003C_003Em__67(ZS_ItemInfo info)
-		{
-			return info.Id.Equals(bindItem.eInfo.Id);
-		}
-	}
-
-	[CompilerGenerated]
-	private sealed class _003CBindSelectBtnAfterUnwieldItem_003Ec__AnonStorey32
-	{
-		internal ZS_EquipBtnItemShowInfo bindItem;
-
-		internal bool _003C_003Em__69(ZS_ItemInfo info)
-		{
-			return info.Id.Equals(bindItem.eInfo.Id);
-		}
-	}
-
 	public TUIButtonClick buyBtn;
 
 	public TUIButtonClick upGradeBtn;
@@ -610,8 +587,8 @@ public class ZS_GroupObjectBind : MonoBehaviour
 		List<ZS_EquipmentInfo> list2 = new List<ZS_EquipmentInfo>();
 		list2.AddRange(equipArray);
 		list.AddRange(componentsInChildren);
-		equipInfo = list2.Find(_003CBindSelectBtnInfoAfterBuy_003Em__5E);
-		ZS_EquipBtnShowInfo zS_EquipBtnShowInfo = list.Find(_003CBindSelectBtnInfoAfterBuy_003Em__5F);
+		equipInfo = list2.Find((ZS_EquipmentInfo info) => info.Id.Equals(equipInfo.Id));
+		ZS_EquipBtnShowInfo zS_EquipBtnShowInfo = list.Find((ZS_EquipBtnShowInfo bInfo) => equipInfo.Id.Equals(bInfo.myEquipInfo.Id));
 		zS_EquipBtnShowInfo.myEquipInfo = equipInfo;
 		ZS_EquipShowPrice componentInChildren = zS_EquipBtnShowInfo.GetComponentInChildren<ZS_EquipShowPrice>();
 		componentInChildren.gameObject.SetActiveRecursively(false);
@@ -656,8 +633,8 @@ public class ZS_GroupObjectBind : MonoBehaviour
 		list.AddRange(componentsInChildren);
 		List<ZS_EquipmentInfo> list2 = new List<ZS_EquipmentInfo>();
 		list2.AddRange(equipArray);
-		equipInfo = list2.Find(_003CBindSelectBtnInfoAfterUnwield_003Em__60);
-		ZS_EquipBtnShowInfo zS_EquipBtnShowInfo = list.Find(_003CBindSelectBtnInfoAfterUnwield_003Em__61);
+		equipInfo = list2.Find((ZS_EquipmentInfo info) => equipInfo.Id.Equals(info.Id));
+		ZS_EquipBtnShowInfo zS_EquipBtnShowInfo = list.Find((ZS_EquipBtnShowInfo bInfo) => bInfo.myEquipInfo.Id.Equals(equipInfo.Id));
 		zS_EquipBtnShowInfo.myEquipInfo = equipInfo;
 		if (zS_EquipBtnShowInfo.myEquipInfo.IsEquiped)
 		{
@@ -676,8 +653,8 @@ public class ZS_GroupObjectBind : MonoBehaviour
 		List<ZS_EquipmentInfo> list2 = new List<ZS_EquipmentInfo>();
 		list.AddRange(componentsInChildren);
 		list2.AddRange(equipArray);
-		equipInfo = list2.Find(_003CBindSelectBtnInfoAfterUpGrade_003Em__62);
-		btnInfo = list.Find(_003CBindSelectBtnInfoAfterUpGrade_003Em__63);
+		equipInfo = list2.Find((ZS_EquipmentInfo info) => info.Group.Equals(equipInfo.Group));
+		btnInfo = list.Find((ZS_EquipBtnShowInfo bInfo) => equipInfo.Group.Equals(bInfo.myEquipInfo.Group));
 		btnInfo.myEquipInfo = equipInfo;
 	}
 
@@ -696,8 +673,8 @@ public class ZS_GroupObjectBind : MonoBehaviour
 		ZS_EquipBtnItemShowInfo[] componentsInChildren = base.transform.GetComponentsInChildren<ZS_EquipBtnItemShowInfo>();
 		List<ZS_EquipBtnItemShowInfo> list = new List<ZS_EquipBtnItemShowInfo>();
 		list.AddRange(componentsInChildren);
-		itemInfo = allItemList.Find(_003CBindSelectBtnAfterBuyItem_003Em__64);
-		ZS_EquipBtnItemShowInfo zS_EquipBtnItemShowInfo = list.Find(_003CBindSelectBtnAfterBuyItem_003Em__65);
+		itemInfo = allItemList.Find((ZS_ItemInfo info) => info.Id.Equals(itemInfo.Id));
+		ZS_EquipBtnItemShowInfo zS_EquipBtnItemShowInfo = list.Find((ZS_EquipBtnItemShowInfo info) => info.eInfo.Id.Equals(itemInfo.Id));
 		if (null != zS_EquipBtnItemShowInfo)
 		{
 			zS_EquipBtnItemShowInfo.eInfo = itemInfo;
@@ -710,24 +687,24 @@ public class ZS_GroupObjectBind : MonoBehaviour
 		ZS_EquipBtnItemShowInfo[] componentsInChildren = base.transform.GetComponentsInChildren<ZS_EquipBtnItemShowInfo>();
 		List<ZS_EquipBtnItemShowInfo> list = new List<ZS_EquipBtnItemShowInfo>();
 		list.AddRange(componentsInChildren);
-		itemInfo = allItemList.Find(_003CBindSelectBtnAfterEquipItem_003Em__66);
+		itemInfo = allItemList.Find((ZS_ItemInfo info) => info.Id.Equals(itemInfo.Id));
 		if (!itemInfo.canBuy)
 		{
 			buyItemBtn.gameObject.SetActiveRecursively(false);
 		}
-		_003CBindSelectBtnAfterEquipItem_003Ec__AnonStorey31 _003CBindSelectBtnAfterEquipItem_003Ec__AnonStorey = new _003CBindSelectBtnAfterEquipItem_003Ec__AnonStorey31();
+		ZS_EquipBtnItemShowInfo bindItem;
 		foreach (ZS_EquipBtnItemShowInfo item in list)
 		{
-			_003CBindSelectBtnAfterEquipItem_003Ec__AnonStorey.bindItem = item;
-			ZS_ItemInfo eInfo = allItemList.Find(_003CBindSelectBtnAfterEquipItem_003Ec__AnonStorey._003C_003Em__67);
-			_003CBindSelectBtnAfterEquipItem_003Ec__AnonStorey.bindItem.eInfo = eInfo;
-			if (_003CBindSelectBtnAfterEquipItem_003Ec__AnonStorey.bindItem.eInfo.IsUsing)
+			bindItem = item;
+			ZS_ItemInfo eInfo = allItemList.Find((ZS_ItemInfo info) => info.Id.Equals(bindItem.eInfo.Id));
+			bindItem.eInfo = eInfo;
+			if (bindItem.eInfo.IsUsing)
 			{
-				_003CBindSelectBtnAfterEquipItem_003Ec__AnonStorey.bindItem.msEquipped.gameObject.SetActiveRecursively(true);
+				bindItem.msEquipped.gameObject.SetActiveRecursively(true);
 			}
 			else
 			{
-				_003CBindSelectBtnAfterEquipItem_003Ec__AnonStorey.bindItem.msEquipped.gameObject.SetActiveRecursively(false);
+				bindItem.msEquipped.gameObject.SetActiveRecursively(false);
 			}
 		}
 	}
@@ -737,24 +714,24 @@ public class ZS_GroupObjectBind : MonoBehaviour
 		ZS_EquipBtnItemShowInfo[] componentsInChildren = base.transform.GetComponentsInChildren<ZS_EquipBtnItemShowInfo>();
 		List<ZS_EquipBtnItemShowInfo> list = new List<ZS_EquipBtnItemShowInfo>();
 		list.AddRange(componentsInChildren);
-		itemInfo = allItemList.Find(_003CBindSelectBtnAfterUnwieldItem_003Em__68);
+		itemInfo = allItemList.Find((ZS_ItemInfo info) => info.Id.Equals(itemInfo.Id));
 		if (!itemInfo.canBuy)
 		{
 			buyItemBtn.gameObject.SetActiveRecursively(false);
 		}
-		_003CBindSelectBtnAfterUnwieldItem_003Ec__AnonStorey32 _003CBindSelectBtnAfterUnwieldItem_003Ec__AnonStorey = new _003CBindSelectBtnAfterUnwieldItem_003Ec__AnonStorey32();
+		ZS_EquipBtnItemShowInfo bindItem;
 		foreach (ZS_EquipBtnItemShowInfo item in list)
 		{
-			_003CBindSelectBtnAfterUnwieldItem_003Ec__AnonStorey.bindItem = item;
-			ZS_ItemInfo eInfo = allItemList.Find(_003CBindSelectBtnAfterUnwieldItem_003Ec__AnonStorey._003C_003Em__69);
-			_003CBindSelectBtnAfterUnwieldItem_003Ec__AnonStorey.bindItem.eInfo = eInfo;
-			if (_003CBindSelectBtnAfterUnwieldItem_003Ec__AnonStorey.bindItem.eInfo.IsUsing)
+			bindItem = item;
+			ZS_ItemInfo eInfo = allItemList.Find((ZS_ItemInfo info) => info.Id.Equals(bindItem.eInfo.Id));
+			bindItem.eInfo = eInfo;
+			if (bindItem.eInfo.IsUsing)
 			{
-				_003CBindSelectBtnAfterUnwieldItem_003Ec__AnonStorey.bindItem.msEquipped.gameObject.SetActiveRecursively(true);
+				bindItem.msEquipped.gameObject.SetActiveRecursively(true);
 			}
 			else
 			{
-				_003CBindSelectBtnAfterUnwieldItem_003Ec__AnonStorey.bindItem.msEquipped.gameObject.SetActiveRecursively(false);
+				bindItem.msEquipped.gameObject.SetActiveRecursively(false);
 			}
 		}
 	}
@@ -834,65 +811,5 @@ public class ZS_GroupObjectBind : MonoBehaviour
 		updateFail.SetActiveRecursively(false);
 		buyFail.SetActiveRecursively(false);
 		equipFail.SetActiveRecursively(false);
-	}
-
-	[CompilerGenerated]
-	private bool _003CBindSelectBtnInfoAfterBuy_003Em__5E(ZS_EquipmentInfo info)
-	{
-		return info.Id.Equals(equipInfo.Id);
-	}
-
-	[CompilerGenerated]
-	private bool _003CBindSelectBtnInfoAfterBuy_003Em__5F(ZS_EquipBtnShowInfo bInfo)
-	{
-		return equipInfo.Id.Equals(bInfo.myEquipInfo.Id);
-	}
-
-	[CompilerGenerated]
-	private bool _003CBindSelectBtnInfoAfterUnwield_003Em__60(ZS_EquipmentInfo info)
-	{
-		return equipInfo.Id.Equals(info.Id);
-	}
-
-	[CompilerGenerated]
-	private bool _003CBindSelectBtnInfoAfterUnwield_003Em__61(ZS_EquipBtnShowInfo bInfo)
-	{
-		return bInfo.myEquipInfo.Id.Equals(equipInfo.Id);
-	}
-
-	[CompilerGenerated]
-	private bool _003CBindSelectBtnInfoAfterUpGrade_003Em__62(ZS_EquipmentInfo info)
-	{
-		return info.Group.Equals(equipInfo.Group);
-	}
-
-	[CompilerGenerated]
-	private bool _003CBindSelectBtnInfoAfterUpGrade_003Em__63(ZS_EquipBtnShowInfo bInfo)
-	{
-		return equipInfo.Group.Equals(bInfo.myEquipInfo.Group);
-	}
-
-	[CompilerGenerated]
-	private bool _003CBindSelectBtnAfterBuyItem_003Em__64(ZS_ItemInfo info)
-	{
-		return info.Id.Equals(itemInfo.Id);
-	}
-
-	[CompilerGenerated]
-	private bool _003CBindSelectBtnAfterBuyItem_003Em__65(ZS_EquipBtnItemShowInfo info)
-	{
-		return info.eInfo.Id.Equals(itemInfo.Id);
-	}
-
-	[CompilerGenerated]
-	private bool _003CBindSelectBtnAfterEquipItem_003Em__66(ZS_ItemInfo info)
-	{
-		return info.Id.Equals(itemInfo.Id);
-	}
-
-	[CompilerGenerated]
-	private bool _003CBindSelectBtnAfterUnwieldItem_003Em__68(ZS_ItemInfo info)
-	{
-		return info.Id.Equals(itemInfo.Id);
 	}
 }

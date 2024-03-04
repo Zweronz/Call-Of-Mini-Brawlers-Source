@@ -16,7 +16,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 1.690979, y: 1.1920929E-07, z: 2.3429217}
+      m_Extent: {x: 3.4350536, y: 1.5015097E-07, z: 3.4350536}
   m_MeshCompression: 0
   m_StreamCompression: 0
   m_IsReadable: 1
@@ -26,7 +26,7 @@ Mesh:
   m_Skin: []
   m_BindPose: []
   m_VertexData:
-    m_CurrentChannels: 43
+    m_CurrentChannels: 59
     m_VertexCount: 4
     m_Channels:
     - stream: 0
@@ -46,17 +46,17 @@ Mesh:
       format: 0
       dimension: 2
     - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
       offset: 32
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 40
       format: 0
       dimension: 4
     m_Streams:
-    - channelMask: 43
+    - channelMask: 59
       offset: 0
-      stride: 48
+      stride: 56
       dividerOp: 0
       frequency: 0
     - channelMask: 0
@@ -74,8 +74,8 @@ Mesh:
       stride: 0
       dividerOp: 0
       frequency: 0
-    m_DataSize: 192
-    _typelessdata: 0072d8bf000000346ef2154000000000000080bf00000000000000000000803f0000000000000000000080bf000080bf0072d83f000000b46ef215c000000000000080bf000000000000803f000000000000000000000000000080bf000080bf0072d83f000000346ef2154000000000000080bf0000000000000000000000000000000000000000000080bf000080bf0072d8bf000000b46ef215c000000000000080bf000000000000803f0000803f0000000000000000000080bf000080bf
+    m_DataSize: 224
+    _typelessdata: ebd75b402f392134ebd75bc000000000000080bf0000000000000000000000000000000000000000000080bf0000000000000000000080bfebd75bc02f3921b4ebd75b4000000000000080bf000000000000803f0000803f0000803f0000803f000080bf0000000000000000000080bfebd75bc02f392134ebd75bc000000000000080bf000000000000803f000000000000803f00000000000080bf0000000000000000000080bfebd75b402f3921b4ebd75b4000000000000080bf00000000000000000000803f000000000000803f000080bf0000000000000000000080bf
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -133,6 +133,6 @@ Mesh:
       m_BitSize: 0
   m_LocalAABB:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 1.690979, y: 1.1920929E-07, z: 2.3429217}
+    m_Extent: {x: 3.4350536, y: 1.5015097E-07, z: 3.4350536}
   m_MeshUsageFlags: 0
   m_MeshOptimized: 1

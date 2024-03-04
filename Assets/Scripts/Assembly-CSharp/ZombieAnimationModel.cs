@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class ZombieAnimationModel : MonoBehaviour
@@ -22,17 +21,6 @@ public class ZombieAnimationModel : MonoBehaviour
 		public int appearType;
 
 		public AnimationClip appearAnim;
-	}
-
-	[CompilerGenerated]
-	private sealed class _003COnAppear_003Ec__AnonStorey2D
-	{
-		internal int appearType;
-
-		internal bool _003C_003Em__51(AppearAnimationData data)
-		{
-			return appearType == data.appearType;
-		}
 	}
 
 	public GameObject notifyObj;
@@ -263,11 +251,9 @@ public class ZombieAnimationModel : MonoBehaviour
 
 	public void OnAppear(int appearType)
 	{
-		_003COnAppear_003Ec__AnonStorey2D _003COnAppear_003Ec__AnonStorey2D = new _003COnAppear_003Ec__AnonStorey2D();
-		_003COnAppear_003Ec__AnonStorey2D.appearType = appearType;
 		if (!isPause)
 		{
-			List<AppearAnimationData> list = appearAnims.FindAll(_003COnAppear_003Ec__AnonStorey2D._003C_003Em__51);
+			List<AppearAnimationData> list = appearAnims.FindAll((AppearAnimationData data) => appearType == data.appearType);
 			if (list != null && list.Count > 0)
 			{
 				string text = list[UnityEngine.Random.Range(0, list.Count)].appearAnim.name;

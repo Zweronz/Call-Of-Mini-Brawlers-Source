@@ -1,24 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Event;
 using UnityEngine;
 
 [RequireComponent(typeof(ZombieCreator))]
 public class ArenaRefreshZombies : MonoBehaviour
 {
-	[CompilerGenerated]
-	private sealed class _003CChooseCurrentMeterRule_003Ec__AnonStorey22
-	{
-		internal int meter;
-
-		internal bool _003C_003Em__17(int mt)
-		{
-			return mt > meter;
-		}
-	}
-
 	[SerializeField]
 	protected List<Transform> refreshPoints;
 
@@ -48,18 +35,6 @@ public class ArenaRefreshZombies : MonoBehaviour
 
 	private Transform target;
 
-	[CompilerGenerated]
-	private static Action<Zombie> _003C_003Ef__am_0024cacheE;
-
-	[CompilerGenerated]
-	private static Comparison<int> _003C_003Ef__am_0024cacheF;
-
-	[CompilerGenerated]
-	private static Predicate<Zombie> _003C_003Ef__am_0024cache10;
-
-	[CompilerGenerated]
-	private static Action<Zombie> _003C_003Ef__am_0024cache11;
-
 	public void AddRefreshPoints(params Transform[] points)
 	{
 		if (refreshPoints == null)
@@ -81,12 +56,10 @@ public class ArenaRefreshZombies : MonoBehaviour
 		if (killAllZombies)
 		{
 			ClearDeadZombie();
-			List<Zombie> list = zombies;
-			if (_003C_003Ef__am_0024cacheE == null)
+			zombies.ForEach(delegate(Zombie zombie)
 			{
-				_003C_003Ef__am_0024cacheE = _003CRestart_003Em__13;
-			}
-			list.ForEach(_003C_003Ef__am_0024cacheE);
+				zombie.Disappear();
+			});
 		}
 		StartCoroutine(Refresh(interval));
 	}
@@ -99,12 +72,7 @@ public class ArenaRefreshZombies : MonoBehaviour
 		this.level = level;
 		meters.Clear();
 		meters.AddRange(arenaMission.data.MeterRules.Keys);
-		List<int> list = meters;
-		if (_003C_003Ef__am_0024cacheF == null)
-		{
-			_003C_003Ef__am_0024cacheF = _003CStartRefresh_003Em__14;
-		}
-		list.Sort(_003C_003Ef__am_0024cacheF);
+		meters.Sort((int meter1, int meter2) => meter1.CompareTo(meter2));
 		StartCoroutine(Refresh(0f));
 	}
 
@@ -116,22 +84,15 @@ public class ArenaRefreshZombies : MonoBehaviour
 
 	private void ClearDeadZombie()
 	{
-		List<Zombie> list = zombies;
-		if (_003C_003Ef__am_0024cache10 == null)
-		{
-			_003C_003Ef__am_0024cache10 = _003CClearDeadZombie_003Em__15;
-		}
-		list.RemoveAll(_003C_003Ef__am_0024cache10);
+		zombies.RemoveAll((Zombie zombie) => null == zombie);
 	}
 
 	private void LockAllZombie()
 	{
-		List<Zombie> list = zombies;
-		if (_003C_003Ef__am_0024cache11 == null)
+		zombies.ForEach(delegate(Zombie zombie)
 		{
-			_003C_003Ef__am_0024cache11 = _003CLockAllZombie_003Em__16;
-		}
-		list.ForEach(_003C_003Ef__am_0024cache11);
+			zombie.Lock();
+		});
 	}
 
 	private IEnumerator Refresh(float time)
@@ -189,7 +150,7 @@ public class ArenaRefreshZombies : MonoBehaviour
 		}
 		if (refreshPointsT.Count > 0)
 		{
-			currentRefreshPoint = refreshPointsT[UnityEngine.Random.Range(0, refreshPointsT.Count)];
+			currentRefreshPoint = refreshPointsT[Random.Range(0, refreshPointsT.Count)];
 			refreshPointsT.Remove(currentRefreshPoint);
 			return currentRefreshPoint;
 		}
@@ -212,16 +173,15 @@ public class ArenaRefreshZombies : MonoBehaviour
 	{
 		if (meters.Count > 0)
 		{
-			_003CChooseCurrentMeterRule_003Ec__AnonStorey22 _003CChooseCurrentMeterRule_003Ec__AnonStorey = new _003CChooseCurrentMeterRule_003Ec__AnonStorey22();
-			_003CChooseCurrentMeterRule_003Ec__AnonStorey.meter = Mathf.FloorToInt((target.position - startPoint.position).magnitude);
+			int meter = Mathf.FloorToInt((target.position - startPoint.position).magnitude);
 			int num = 0;
-			if (_003CChooseCurrentMeterRule_003Ec__AnonStorey.meter >= meters[meters.Count - 1])
+			if (meter >= meters[meters.Count - 1])
 			{
 				num = meters.Count - 1;
 			}
 			else
 			{
-				num = meters.FindIndex(_003CChooseCurrentMeterRule_003Ec__AnonStorey._003C_003Em__17) - 1;
+				num = meters.FindIndex((int mt) => mt > meter) - 1;
 				if (num < 0)
 				{
 					num = 0;
@@ -233,29 +193,5 @@ public class ArenaRefreshZombies : MonoBehaviour
 		{
 			currentMeterRule = null;
 		}
-	}
-
-	[CompilerGenerated]
-	private static void _003CRestart_003Em__13(Zombie zombie)
-	{
-		zombie.Disappear();
-	}
-
-	[CompilerGenerated]
-	private static int _003CStartRefresh_003Em__14(int meter1, int meter2)
-	{
-		return meter1.CompareTo(meter2);
-	}
-
-	[CompilerGenerated]
-	private static bool _003CClearDeadZombie_003Em__15(Zombie zombie)
-	{
-		return null == zombie;
-	}
-
-	[CompilerGenerated]
-	private static void _003CLockAllZombie_003Em__16(Zombie zombie)
-	{
-		zombie.Lock();
 	}
 }

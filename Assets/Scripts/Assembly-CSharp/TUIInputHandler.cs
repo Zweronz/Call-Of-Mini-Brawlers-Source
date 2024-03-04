@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class TUIInputHandler : MonoBehaviour
@@ -19,12 +18,6 @@ public class TUIInputHandler : MonoBehaviour
 
 	private List<TUIInputHandle> mHandles = new List<TUIInputHandle>();
 
-	[CompilerGenerated]
-	private static Predicate<TUIInputHandle> _003C_003Ef__am_0024cache2;
-
-	[CompilerGenerated]
-	private static Comparison<TUIInputHandle> _003C_003Ef__am_0024cache3;
-
 	public void AddHandle(TUIInputHandle handle)
 	{
 		List<TUIInputHandle> list = ((handles != null) ? new List<TUIInputHandle>(handles) : new List<TUIInputHandle>());
@@ -36,18 +29,15 @@ public class TUIInputHandler : MonoBehaviour
 
 	private void Sort()
 	{
-		List<TUIInputHandle> list = mHandles;
-		if (_003C_003Ef__am_0024cache2 == null)
+		mHandles.RemoveAll((TUIInputHandle handle) => handle.tui == null);
+		mHandles.Sort(delegate(TUIInputHandle handle1, TUIInputHandle handle2)
 		{
-			_003C_003Ef__am_0024cache2 = _003CSort_003Em__58;
-		}
-		list.RemoveAll(_003C_003Ef__am_0024cache2);
-		List<TUIInputHandle> list2 = mHandles;
-		if (_003C_003Ef__am_0024cache3 == null)
-		{
-			_003C_003Ef__am_0024cache3 = _003CSort_003Em__59;
-		}
-		list2.Sort(_003C_003Ef__am_0024cache3);
+			if (handle1.priority < handle2.priority)
+			{
+				return 1;
+			}
+			return (handle1.priority != handle2.priority) ? (-1) : 0;
+		});
 	}
 
 	private void Awake()
@@ -69,25 +59,5 @@ public class TUIInputHandler : MonoBehaviour
 			{
 			}
 		}
-	}
-
-	[CompilerGenerated]
-	private static bool _003CSort_003Em__58(TUIInputHandle handle)
-	{
-		return handle.tui == null;
-	}
-
-	[CompilerGenerated]
-	private static int _003CSort_003Em__59(TUIInputHandle handle1, TUIInputHandle handle2)
-	{
-		if (handle1.priority < handle2.priority)
-		{
-			return 1;
-		}
-		if (handle1.priority == handle2.priority)
-		{
-			return 0;
-		}
-		return -1;
 	}
 }

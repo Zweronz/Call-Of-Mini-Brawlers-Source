@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Event;
 using UnityEngine;
 
@@ -20,12 +18,6 @@ public class ArenaGameLevel : GameLevel
 	private ArenaMissionDetail arenaDetail;
 
 	private int reviveCount;
-
-	[CompilerGenerated]
-	private static Predicate<string> _003C_003Ef__am_0024cache7;
-
-	[CompilerGenerated]
-	private static Comparison<GameCenterModel.FriendScore> _003C_003Ef__am_0024cache8;
 
 	public static void SetFriendScoreList(List<GameCenterModel.FriendScore> fsList)
 	{
@@ -60,11 +52,7 @@ public class ArenaGameLevel : GameLevel
 		arenaRefreshZombies.AddRefreshPoints(worldCreator.refreshPoints.ToArray());
 		List<string> list = new List<string>();
 		list.AddRange(Player.Instance.Guns.ToArray());
-		if (_003C_003Ef__am_0024cache7 == null)
-		{
-			_003C_003Ef__am_0024cache7 = _003CInitLevel_003Em__11;
-		}
-		list.RemoveAll(_003C_003Ef__am_0024cache7);
+		list.RemoveAll((string gunId) => string.IsNullOrEmpty(gunId));
 		weaponArsenal.TakeOver(gunAssembly.Create(DataCenter.Instance.Guns.Find(list.ToArray()).ToArray()).ToArray());
 		weaponArsenal.TakeOver(meleeWeaponAssembly.Create(DataCenter.Instance.MeleeWeapons.Find(Player.Instance.CurrentHero.meleeWeapon)));
 		hero = heroCreator.Create(DataCenter.Instance.Heros.Find(Player.Instance.CurrentHero.id));
@@ -162,11 +150,7 @@ public class ArenaGameLevel : GameLevel
 		List<GameCenterModel.FriendScore> list = new List<GameCenterModel.FriendScore>();
 		List<GameCenterModel.FriendScore> list2 = new List<GameCenterModel.FriendScore>();
 		list2.AddRange(fsList);
-		if (_003C_003Ef__am_0024cache8 == null)
-		{
-			_003C_003Ef__am_0024cache8 = _003COnGameStartEnd_003Em__12;
-		}
-		list2.Sort(_003C_003Ef__am_0024cache8);
+		list2.Sort((GameCenterModel.FriendScore fs1, GameCenterModel.FriendScore fs2) => fs1.score.value.CompareTo(fs2.score.value));
 		long num = min;
 		for (int i = 0; i < list2.Count; i++)
 		{
@@ -199,8 +183,8 @@ public class ArenaGameLevel : GameLevel
 		HeroData heroData = DataCenter.Instance.Heros.Find(arenaDetail.MissionDetailData.heroId);
 		EnemyBaseData enemyBaseData = DataCenter.Instance.BaseEnemies.Find(evt.ZombieID);
 		EnemyBaseHpDmgData enemyBaseHpDmgData = DataCenter.Instance.BaseEnemiesHpDmg.Find(arenaDetail.MissionDetailData.level);
-		int num = (int)((enemyBaseData.coefficientOfGold * enemyBaseHpDmgData.gold + UnityEngine.Random.Range(0f, enemyBaseHpDmgData.extra)) * heroData.coefficientOfGold * ((evt.Rate == null) ? 1f : evt.Rate.goldRate));
-		int num2 = (int)((enemyBaseData.coefficientOfGold * enemyBaseHpDmgData.gold + UnityEngine.Random.Range(0f, enemyBaseHpDmgData.extra)) * heroData.coefficientOfGold * ((evt.Rate == null) ? 1f : evt.Rate.expRate));
+		int num = (int)((enemyBaseData.coefficientOfGold * enemyBaseHpDmgData.gold + Random.Range(0f, enemyBaseHpDmgData.extra)) * heroData.coefficientOfGold * ((evt.Rate == null) ? 1f : evt.Rate.goldRate));
+		int num2 = (int)((enemyBaseData.coefficientOfGold * enemyBaseHpDmgData.gold + Random.Range(0f, enemyBaseHpDmgData.extra)) * heroData.coefficientOfGold * ((evt.Rate == null) ? 1f : evt.Rate.expRate));
 		Player.Instance.AddGold(num);
 		arenaDetail.MissionDetailData.getGold += num;
 		int num3 = Player.Instance.AddExp(num2);
@@ -244,20 +228,8 @@ public class ArenaGameLevel : GameLevel
 		{
 			if (null != gameObject)
 			{
-				UnityEngine.Object.Destroy(gameObject);
+				Object.Destroy(gameObject);
 			}
 		}
-	}
-
-	[CompilerGenerated]
-	private static bool _003CInitLevel_003Em__11(string gunId)
-	{
-		return string.IsNullOrEmpty(gunId);
-	}
-
-	[CompilerGenerated]
-	private static int _003COnGameStartEnd_003Em__12(GameCenterModel.FriendScore fs1, GameCenterModel.FriendScore fs2)
-	{
-		return fs1.score.value.CompareTo(fs2.score.value);
 	}
 }

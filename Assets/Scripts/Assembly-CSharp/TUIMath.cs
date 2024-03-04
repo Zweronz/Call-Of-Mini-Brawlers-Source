@@ -57,29 +57,22 @@ public static class TUIMath
 			return 14;
 		case 'F':
 			return 15;
+		case 'b':
+			return 11;
+		case 'c':
+			return 12;
+		case 'd':
+			return 13;
+		case 'e':
+			return 14;
+		case 'f':
+			return 15;
 		default:
-			switch (ch)
-			{
-			case 'b':
-				return 11;
-			case 'c':
-				return 12;
-			case 'd':
-				return 13;
-			case 'e':
-				return 14;
-			case 'f':
-				return 15;
-			default:
-				return 15;
-			case 'a':
-				break;
-			}
-			break;
+			return 15;
 		case 'A':
-			break;
+		case 'a':
+			return 10;
 		}
-		return 10;
 	}
 
 	public static int ColorToInt(Color c)
@@ -173,7 +166,7 @@ public static class TUIMath
 	public static Vector3 ApplyHalfPixelOffset(Vector3 pos, Vector3 scale)
 	{
 		RuntimePlatform platform = Application.platform;
-		if (platform == RuntimePlatform.WindowsPlayer|| platform == RuntimePlatform.WindowsEditor)
+		if (platform == RuntimePlatform.WindowsPlayer || platform == RuntimePlatform.WindowsEditor)
 		{
 			if (Mathf.RoundToInt(scale.x) == Mathf.RoundToInt(scale.x * 0.5f) * 2)
 			{

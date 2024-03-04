@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.CompilerServices;
 
 public class Player
 {
@@ -97,17 +96,6 @@ public class Player
 		public bool hasUpdateExp;
 	}
 
-	[CompilerGenerated]
-	private sealed class _003CFindHero_003Ec__AnonStorey21
-	{
-		internal int id;
-
-		internal bool _003C_003Em__D(Data.HeroData hd)
-		{
-			return id == hd.id;
-		}
-	}
-
 	private static Player instance;
 
 	private bool isDirty;
@@ -132,9 +120,6 @@ public class Player
 	private HashSet<string> newUnlocked = new HashSet<string>();
 
 	private Data tempData;
-
-	[CompilerGenerated]
-	private static Predicate<SpecailIAPData> _003C_003Ef__am_0024cacheD;
 
 	public static Player Instance
 	{
@@ -748,12 +733,7 @@ public class Player
 		bool flag = false;
 		if (!ZombieStreetConstants.version.Equals(Version))
 		{
-			SpecialIAPDataRepository specialIAPs = DataCenter.Instance.SpecialIAPs;
-			if (_003C_003Ef__am_0024cacheD == null)
-			{
-				_003C_003Ef__am_0024cacheD = _003CLoad_003Em__C;
-			}
-			List<SpecailIAPData> list = specialIAPs.FindAll(_003C_003Ef__am_0024cacheD);
+			List<SpecailIAPData> list = DataCenter.Instance.SpecialIAPs.FindAll((SpecailIAPData data) => data.notifyDay == ZombieStreetConstants.specailIAPDataNotifyDay);
 			if (list != null && list.Count > 0)
 			{
 				foreach (SpecailIAPData item in list)
@@ -806,13 +786,11 @@ public class Player
 
 	public Data.HeroData FindHero(int id)
 	{
-		_003CFindHero_003Ec__AnonStorey21 _003CFindHero_003Ec__AnonStorey = new _003CFindHero_003Ec__AnonStorey21();
-		_003CFindHero_003Ec__AnonStorey.id = id;
 		if (data.heros == null)
 		{
 			data.heros = new List<Data.HeroData>();
 		}
-		return data.heros.Find(_003CFindHero_003Ec__AnonStorey._003C_003Em__D);
+		return data.heros.Find((Data.HeroData hd) => id == hd.id);
 	}
 
 	public int GetBoughtIapCount(string iapId)
@@ -845,12 +823,11 @@ public class Player
 		try
 		{
 			result = dataReadWriteModel.Deserialize<Data>();
-			return result;
 		}
 		catch
 		{
-			return result;
 		}
+		return result;
 	}
 
 	private void CreateNewData()
@@ -1059,7 +1036,7 @@ public class Player
 		{
 			return;
 		}
-		List<GunData> list = DataCenter.Instance.Guns.FindAll(_003CInitUnlockedGuns_003Em__E);
+		List<GunData> list = DataCenter.Instance.Guns.FindAll((GunData gun) => gun.unLockLevel <= data.heroLevel);
 		if (list == null || list.Count <= 0)
 		{
 			return;
@@ -1074,14 +1051,13 @@ public class Player
 	private HashSet<string> CalculateUnlockedGuns()
 	{
 		HashSet<string> hashSet = new HashSet<string>();
-		List<GunData> list = DataCenter.Instance.Guns.FindAll(_003CCalculateUnlockedGuns_003Em__F);
+		List<GunData> list = DataCenter.Instance.Guns.FindAll((GunData gun) => gun.unLockLevel <= data.heroLevel);
 		if (list != null && list.Count > 0)
 		{
 			foreach (GunData item in list)
 			{
 				hashSet.Add(item.typeName);
 			}
-			return hashSet;
 		}
 		return hashSet;
 	}
@@ -1112,23 +1088,5 @@ public class Player
 		data.heroLevel = 1;
 		data.exp = 0.0;
 		AddExp(num);
-	}
-
-	[CompilerGenerated]
-	private static bool _003CLoad_003Em__C(SpecailIAPData data)
-	{
-		return data.notifyDay == ZombieStreetConstants.specailIAPDataNotifyDay;
-	}
-
-	[CompilerGenerated]
-	private bool _003CInitUnlockedGuns_003Em__E(GunData gun)
-	{
-		return gun.unLockLevel <= data.heroLevel;
-	}
-
-	[CompilerGenerated]
-	private bool _003CCalculateUnlockedGuns_003Em__F(GunData gun)
-	{
-		return gun.unLockLevel <= data.heroLevel;
 	}
 }

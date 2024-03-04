@@ -1,25 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 public class MeleeWeaponRepository : IMeleeWeaponRepository, IRepository<string, MeleeWeaponData>
 {
-	[CompilerGenerated]
-	private sealed class _003CInitialize_003Ec__AnonStorey1F
-	{
-		internal string typeName;
-
-		internal bool _003C_003Em__9(MeleeWeaponData data)
-		{
-			return data.typeName == typeName;
-		}
-
-		internal bool _003C_003Em__A(MeleeWeaponData data)
-		{
-			return data.typeName == typeName;
-		}
-	}
-
 	private Dictionary<string, MeleeWeaponData> datas = new Dictionary<string, MeleeWeaponData>();
 
 	private Dictionary<string, List<MeleeWeaponData>> datas2 = new Dictionary<string, List<MeleeWeaponData>>();
@@ -45,11 +28,10 @@ public class MeleeWeaponRepository : IMeleeWeaponRepository, IRepository<string,
 		string empty = string.Empty;
 		while (list.Count > 0)
 		{
-			_003CInitialize_003Ec__AnonStorey1F _003CInitialize_003Ec__AnonStorey1F = new _003CInitialize_003Ec__AnonStorey1F();
-			_003CInitialize_003Ec__AnonStorey1F.typeName = list[0].typeName;
+			string typeName = list[0].typeName;
 			list2.Clear();
-			list2.AddRange(list.FindAll(_003CInitialize_003Ec__AnonStorey1F._003C_003Em__9));
-			list.RemoveAll(_003CInitialize_003Ec__AnonStorey1F._003C_003Em__A);
+			list2.AddRange(list.FindAll((MeleeWeaponData data) => data.typeName == typeName));
+			list.RemoveAll((MeleeWeaponData data) => data.typeName == typeName);
 			empty = string.Empty;
 			list3.Clear();
 			int num = list2.Count;

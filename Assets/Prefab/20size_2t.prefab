@@ -3,24 +3,24 @@
 --- !u!1001 &100100000
 Prefab:
   serializedVersion: 2
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1182198362673855}
+  m_RootGameObject: {fileID: 1828148061136504}
   m_IsPrefabParent: 1
   m_IsExploded: 0
---- !u!1 &1182198362673855
+--- !u!1 &1828148061136504
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4946537471477393}
-  - 114: {fileID: 114682505102591832}
+  - 4: {fileID: 4348311130627537}
+  - 114: {fileID: 114590728248189975}
   m_Layer: 0
   m_Name: 20size_2t
   m_TagString: Untagged
@@ -28,29 +28,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4946537471477393
+--- !u!4 &4348311130627537
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1182198362673855}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828148061136504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &114682505102591832
+--- !u!114 &114590728248189975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1182198362673855}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828148061136504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c88f54fcf994b641b97eb9c7d9d7545, type: 3}
+  m_Script: {fileID: 11500000, guid: e7a3fe5edcebdf1e6d777563af176bc3, type: 3}
   m_Name:
-  fontTxt: {fileID: 4900000, guid: 7f33bac235a097f479168c6188fa43b3, type: 3}
-  material: {fileID: 2100000, guid: 62896a197f6b87647aca9b8837bde3a6, type: 2}
+  fontTxt: {fileID: 4900000, guid: ea2b4dae3d454c74689d278a8c5d5ef1, type: 3}
+  material: {fileID: 2100000, guid: 1fa001fcbb888f94f8b9245f31ddf8cf, type: 2}
   mSpacingX: -6
   mSpacingY: -6
   m_reload: 0

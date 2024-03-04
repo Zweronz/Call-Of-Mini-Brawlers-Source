@@ -20,7 +20,7 @@ public class TUIMeshSprite : TUINeedUpdateBase
 
 	private string baseShader = string.Empty;
 
-	private static string grayShader = "iPhone/AlphaBlend_Color";
+	private static string grayShader = "Triniti/TUI/TUIGrayStyle";
 
 	[SerializeField]
 	protected bool grayStyle;
@@ -501,7 +501,6 @@ public class TUIMeshSprite : TUINeedUpdateBase
 			if (null != meshRender.sharedMaterial)
 			{
 				meshRender.sharedMaterial.shader = Shader.Find(grayShader);
-				meshRender.sharedMaterial.SetColor("_TintColor", new Color(0.15f, 0.15f, 0.15f, 1f));
 			}
 		}
 		else

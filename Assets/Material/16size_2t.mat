@@ -2,32 +2,35 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 16size_2t
-  m_Shader: {fileID: 4800000, guid: 1adac37e693796e41a50ad851a951862, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_Shader: {fileID: 4800000, guid: 6cdd911d0b0b9bf4caf72c1f18b7d52c, type: 3}
   m_SavedProperties:
-    serializedVersion: 3
+    serializedVersion: 2
     m_TexEnvs:
-    - _BackTex:
-        m_Texture: {fileID: 2800000, guid: 25d364aadce0ffb43b6181804d7fd9df, type: 3}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 2bdc2063fbfc35c46b8188c68b850b42, type: 3}
         m_Scale: {x: 1, y: -1}
         m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: db62bedb3e26b27449dbedcb4ff0b0a7, type: 3}
+    - first:
+        name: _BackTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 9e91cb1fe538ae742991f9f115c97eaf, type: 3}
         m_Scale: {x: 1, y: -1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_Floats: {}
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorB: {r: 1, g: 1, b: 1, a: 1}
-    - _Rect: {r: -0.7784986, g: 1.4334805, b: 0.77664506, a: 2.6948502}
+    - first:
+        name: _Color
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _ColorB
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _Rect
+      second: {r: -0.7784986, g: 1.4334805, b: 0.77664506, a: 2.6948502}

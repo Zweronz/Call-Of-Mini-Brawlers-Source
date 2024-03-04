@@ -2,63 +2,59 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1001 &100100000
 Prefab:
-  m_ObjectHideFlags: 0
   serializedVersion: 2
+  m_ObjectHideFlags: 1
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1127908142156205}
+  m_RootGameObject: {fileID: 1608720424798166}
   m_IsPrefabParent: 1
---- !u!1 &1127908142156205
+  m_IsExploded: 0
+--- !u!1 &1608720424798166
 GameObject:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - component: {fileID: 4667764804753032}
-  - component: {fileID: 82357469380687152}
-  - component: {fileID: 114095115220374419}
-  - component: {fileID: 114810311941773462}
+  - 4: {fileID: 4886018828643517}
+  - 82: {fileID: 82615237174211650}
+  - 114: {fileID: 114333429573606774}
+  - 114: {fileID: 114516602429980835}
   m_Layer: 0
-  m_Name: zombie_broken
+  m_Name: Zombie_broken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4667764804753032
+--- !u!4 &4886018828643517
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1127908142156205}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1608720424798166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82357469380687152
+--- !u!82 &82615237174211650
 AudioSource:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1127908142156205}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1608720424798166}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 10
@@ -66,78 +62,56 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
-      time: 0.1
+    - time: 0.1
       value: 1
-      inSlope: 0.0000212128
-      outSlope: 0.0000212128
+      inSlope: 2.12128E-05
+      outSlope: 2.12128E-05
       tangentMode: 0
-    - serializedVersion: 2
-      time: 1
+    - time: 1
       value: 0
       inSlope: -0.0056718155
       outSlope: -0.0056718155
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
-      time: 0.33333328
+    - time: 0.33333328
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
-      time: 0
+    - time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &114095115220374419
+--- !u!114 &114333429573606774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1127908142156205}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1608720424798166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0e454d75ec8146409d6d31b1216acf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Script: {fileID: 11500000, guid: e3582d1c7d4196262b5c70e29e7c0f4f, type: 3}
+  m_Name:
   isSfx: 1
   audioClips:
-  - {fileID: 8300000, guid: 50a87b5c664565c459af12f024678c0c, type: 3}
-  - {fileID: 8300000, guid: d07265153d7855f429587949dc401011, type: 3}
-  - {fileID: 8300000, guid: 616915d0147fd5449862430695241bb1, type: 3}
+  - {fileID: 8300000, guid: 293d534d1f8099147aa665d38c3d37de, type: 3}
+  - {fileID: 8300000, guid: bf02f67bd52445d4088fab6d6900b617, type: 3}
+  - {fileID: 8300000, guid: a3b1c83a49c648b4c85bf85e2d55019f, type: 3}
   probability: []
   volumOffset: 0
   pitchOffset: 0
@@ -145,16 +119,15 @@ MonoBehaviour:
   cutoff: 0
   delayTime: 50
   autoDestroy: 0
---- !u!114 &114810311941773462
+--- !u!114 &114516602429980835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1127908142156205}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1608720424798166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4507eebce981424d9c5f8727fc5ddc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Script: {fileID: 11500000, guid: 64a37e59c578bc44061723623ff7d0f0, type: 3}
+  m_Name:
   maxCount: 2
   deltaTime: 0.2

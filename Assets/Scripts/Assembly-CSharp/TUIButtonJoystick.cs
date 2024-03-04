@@ -80,7 +80,8 @@ public class TUIButtonJoystick : TUIButton
 		base.Show();
 		if (null != m_JoyStickObj)
 		{
-			Vector3 localPosition = new Vector3(z: m_JoyStickObj.transform.localPosition.z, x: m_Distance * Mathf.Cos(m_Direction), y: m_Distance * Mathf.Sin(m_Direction));
+			Vector3 localPosition = m_JoyStickObj.transform.localPosition;
+			localPosition = new Vector3(m_Distance * Mathf.Cos(m_Direction), m_Distance * Mathf.Sin(m_Direction), localPosition.z);
 			m_JoyStickObj.transform.localPosition = localPosition;
 		}
 	}

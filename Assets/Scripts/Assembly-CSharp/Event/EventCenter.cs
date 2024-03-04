@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 
 namespace Event
 {
@@ -70,7 +69,7 @@ namespace Event
 			{
 				return;
 			}
-			handlers[eventType].RemoveAll(_003CPublish_00601_003Em__0<T>);
+			handlers[eventType].RemoveAll((object handler) => handler == null);
 			foreach (object item in handlers[eventType])
 			{
 				MethodInfo method = item.GetType().GetMethod("Invoke");
@@ -81,12 +80,6 @@ namespace Event
 		public void Clear()
 		{
 			handlers.Clear();
-		}
-
-		[CompilerGenerated]
-		private static bool _003CPublish_00601_003Em__0<T>(object handler)
-		{
-			return handler == null;
 		}
 	}
 }

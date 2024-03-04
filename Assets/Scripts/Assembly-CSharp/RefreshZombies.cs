@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Event;
 using UnityEngine;
 
@@ -30,12 +28,6 @@ public class RefreshZombies : MonoBehaviour
 	private List<string> specialRefreshRules = new List<string>();
 
 	private int level;
-
-	[CompilerGenerated]
-	private static Predicate<Zombie> _003C_003Ef__am_0024cacheB;
-
-	[CompilerGenerated]
-	private static Action<Zombie> _003C_003Ef__am_0024cacheC;
 
 	public void AddRefreshPoints(params Transform[] points)
 	{
@@ -83,22 +75,15 @@ public class RefreshZombies : MonoBehaviour
 
 	private void ClearDeadZombie()
 	{
-		List<Zombie> list = zombies;
-		if (_003C_003Ef__am_0024cacheB == null)
-		{
-			_003C_003Ef__am_0024cacheB = _003CClearDeadZombie_003Em__40;
-		}
-		list.RemoveAll(_003C_003Ef__am_0024cacheB);
+		zombies.RemoveAll((Zombie zombie) => null == zombie);
 	}
 
 	private void LockAllZombie()
 	{
-		List<Zombie> list = zombies;
-		if (_003C_003Ef__am_0024cacheC == null)
+		zombies.ForEach(delegate(Zombie zombie)
 		{
-			_003C_003Ef__am_0024cacheC = _003CLockAllZombie_003Em__41;
-		}
-		list.ForEach(_003C_003Ef__am_0024cacheC);
+			zombie.Lock();
+		});
 	}
 
 	private IEnumerator Refresh(float time)
@@ -170,7 +155,7 @@ public class RefreshZombies : MonoBehaviour
 		}
 		if (refreshPointsT.Count > 0)
 		{
-			currentRefreshPoint = refreshPointsT[UnityEngine.Random.Range(0, refreshPointsT.Count)];
+			currentRefreshPoint = refreshPointsT[Random.Range(0, refreshPointsT.Count)];
 			refreshPointsT.Remove(currentRefreshPoint);
 			return currentRefreshPoint;
 		}
@@ -187,17 +172,5 @@ public class RefreshZombies : MonoBehaviour
 	private void OnDestroy()
 	{
 		EventCenter.Instance.Unregister<CreateEnemy>(HandleCreateEnemyEvent);
-	}
-
-	[CompilerGenerated]
-	private static bool _003CClearDeadZombie_003Em__40(Zombie zombie)
-	{
-		return null == zombie;
-	}
-
-	[CompilerGenerated]
-	private static void _003CLockAllZombie_003Em__41(Zombie zombie)
-	{
-		zombie.Lock();
 	}
 }

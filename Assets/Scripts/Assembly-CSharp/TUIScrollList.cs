@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [AddComponentMenu("TUI/Control/ScrollList")]
@@ -9,17 +8,6 @@ public class TUIScrollList : TUIControlImpl
 	{
 		Horizontal = 0,
 		Vertical = 1
-	}
-
-	[CompilerGenerated]
-	private sealed class _003CRemove_003Ec__AnonStorey30
-	{
-		internal TUIControl control;
-
-		internal bool _003C_003Em__57(TUIScrollListObject @object)
-		{
-			return @object == control.GetComponent<TUIScrollListObject>();
-		}
 	}
 
 	protected const float reboundSpeed = 1f;
@@ -225,9 +213,7 @@ public class TUIScrollList : TUIControlImpl
 
 	public void Remove(TUIControl control, bool deleteObj)
 	{
-		_003CRemove_003Ec__AnonStorey30 _003CRemove_003Ec__AnonStorey = new _003CRemove_003Ec__AnonStorey30();
-		_003CRemove_003Ec__AnonStorey.control = control;
-		int position = list.FindIndex(_003CRemove_003Ec__AnonStorey._003C_003Em__57);
+		int position = list.FindIndex((TUIScrollListObject @object) => @object == control.GetComponent<TUIScrollListObject>());
 		Remove(position, deleteObj);
 	}
 

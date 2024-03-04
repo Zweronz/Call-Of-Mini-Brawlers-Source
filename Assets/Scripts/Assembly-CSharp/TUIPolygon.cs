@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [AddComponentMenu("TUI/Control/Polygon")]
@@ -38,9 +37,6 @@ public class TUIPolygon : TUIControl
 	private TUIDrawSprite drawSprite;
 
 	private TUIGeometry geometry = new TUIGeometry();
-
-	[CompilerGenerated]
-	private static Comparison<VertexData> _003C_003Ef__am_0024cacheA;
 
 	private Vector3 DatumLine
 	{
@@ -149,11 +145,24 @@ public class TUIPolygon : TUIControl
 			{
 				list2.Add(item);
 			}
-			if (_003C_003Ef__am_0024cacheA == null)
+			list.Sort(delegate(VertexData v1, VertexData v2)
 			{
-				_003C_003Ef__am_0024cacheA = _003CDraw_003Em__56;
-			}
-			list.Sort(_003C_003Ef__am_0024cacheA);
+				float num2 = v1.angle % 360f;
+				float num3 = v2.angle % 360f;
+				if (num2 < 0f)
+				{
+					num2 += 360f;
+				}
+				if (num3 < 0f)
+				{
+					num3 += 360f;
+				}
+				if (num2 > num3)
+				{
+					return 1;
+				}
+				return (num2 < num3) ? (-1) : 0;
+			});
 			if (around)
 			{
 				list.Add(list[0]);
@@ -191,29 +200,5 @@ public class TUIPolygon : TUIControl
 			geometry.Vertices[i + 1] = vector.normalized * vertices[i].length * lengths[i];
 		}
 		drawSprite.Draw(geometry.Vertices, geometry.Triangles, geometry.Uv, geometry.Colors);
-	}
-
-	[CompilerGenerated]
-	private static int _003CDraw_003Em__56(VertexData v1, VertexData v2)
-	{
-		float num = v1.angle % 360f;
-		float num2 = v2.angle % 360f;
-		if (num < 0f)
-		{
-			num += 360f;
-		}
-		if (num2 < 0f)
-		{
-			num2 += 360f;
-		}
-		if (num > num2)
-		{
-			return 1;
-		}
-		if (num < num2)
-		{
-			return -1;
-		}
-		return 0;
 	}
 }

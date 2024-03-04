@@ -387,6 +387,7 @@ public class TUILabel : MonoBehaviour
 	private void Start()
 	{
 		drawSprite = GetComponent<TUIDrawSprite>();
+		transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.01f);
 	}
 
 	public Bounds CalculateBounds(string str)

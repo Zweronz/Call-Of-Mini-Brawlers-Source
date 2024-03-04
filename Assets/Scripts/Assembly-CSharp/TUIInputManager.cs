@@ -8,20 +8,9 @@ public class TUIInputManager
 	{
 		if (Time.frameCount != m_lastFrameCount)
 		{
-			if (Application.isMobilePlatform)
-			{
-				TUIInputManageriOS.UpdateInput();
-			}
-			else
-			{
-				TUIInputManagerWindows.UpdateInput();
-			}
+			TUIInputManageriOS.UpdateInput();
 		}
 		m_lastFrameCount = Time.frameCount;
-		if (Application.isMobilePlatform)
-		{
-			return TUIInputManageriOS.GetInput();
-		}
-		return TUIInputManagerWindows.GetInput();
+		return TUIInputManageriOS.GetInput();
 	}
 }

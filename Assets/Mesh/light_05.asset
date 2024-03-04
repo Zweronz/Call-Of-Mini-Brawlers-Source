@@ -15,8 +15,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 4
     localAABB:
-      m_Center: {x: -9.536743E-07, y: -3.5361367E-09, z: -5.9604645E-08}
-      m_Extent: {x: 6.107721, y: 1.6151105E-07, z: 1.6775465}
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 2.528155, y: 2.5281544, z: 1.6881175}
   m_MeshCompression: 0
   m_StreamCompression: 0
   m_IsReadable: 1
@@ -26,7 +26,7 @@ Mesh:
   m_Skin: []
   m_BindPose: []
   m_VertexData:
-    m_CurrentChannels: 43
+    m_CurrentChannels: 59
     m_VertexCount: 4
     m_Channels:
     - stream: 0
@@ -46,17 +46,17 @@ Mesh:
       format: 0
       dimension: 2
     - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
       offset: 32
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 40
       format: 0
       dimension: 4
     m_Streams:
-    - channelMask: 43
+    - channelMask: 59
       offset: 0
-      stride: 48
+      stride: 56
       dividerOp: 0
       frequency: 0
     - channelMask: 0
@@ -74,8 +74,8 @@ Mesh:
       stride: 0
       dividerOp: 0
       frequency: 0
-    m_DataSize: 192
-    _typelessdata: 7172c340d43731b485496a3f00000000000080bf00000000000000000000803fc47d7fbf000000008f0c813d000080bf7572c3c0d19f293483496abf00000000000080bf000000000000803f000000003d7f7fbf000000005f51803d000080bfdb89be4087f2f533d8b9d6bf00000000000080bf0000000000000000000000007e7d7fbf00000000c92e813d000080bf8b8cc1c0479102b4d7b9d63f00000000000080bf000000000000803f0000803f807f7fbf00000000d92f803d000080bf
+    m_DataSize: 224
+    _typelessdata: 5d6110405a6110403c14d8bff104353ff40435bf0000000000000000000000000000000000000000ef4432bfec4432bfd1d0313e000080bf5d6110c05a6110c03c14d83ff104353ff40435bf000000000000803f0000803f0000803f0000803fef4432bfec4432bfd1d0313e000080bf4bcd21c048cd21c07e82fdbef104353ff50435bf000000000000803f000000000000803f00000000ef4432bfeb4432bfd1d0313e000080bf4bcd214048cd21407e82fd3ef104353ff50435bf00000000000000000000803f000000000000803fef4432bfeb4432bfd1d0313e000080bf
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -132,7 +132,7 @@ Mesh:
       m_Data:
       m_BitSize: 0
   m_LocalAABB:
-    m_Center: {x: -9.536743E-07, y: -3.5361367E-09, z: -5.9604645E-08}
-    m_Extent: {x: 6.107721, y: 1.6151105E-07, z: 1.6775465}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 2.528155, y: 2.5281544, z: 1.6881175}
   m_MeshUsageFlags: 0
   m_MeshOptimized: 1

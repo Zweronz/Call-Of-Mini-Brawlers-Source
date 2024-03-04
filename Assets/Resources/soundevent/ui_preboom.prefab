@@ -2,39 +2,39 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1001 &100100000
 Prefab:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1537269150522870}
+  m_RootGameObject: {fileID: 1334828469364532}
   m_IsPrefabParent: 1
---- !u!1 &1537269150522870
+--- !u!1 &1334828469364532
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4293995283821146}
-  - component: {fileID: 82688978224764357}
-  - component: {fileID: 114605866544037255}
-  - component: {fileID: 114286128399612070}
+  - component: {fileID: 4689357492418055}
+  - component: {fileID: 82032213295115886}
+  - component: {fileID: 114701125593715192}
+  - component: {fileID: 114785629804940381}
   m_Layer: 0
-  m_Name: ui_preboom
+  m_Name: UI_PreBoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4293995283821146
+--- !u!4 &4689357492418055
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1537269150522870}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1334828469364532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -42,12 +42,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82688978224764357
+--- !u!82 &82032213295115886
 AudioSource:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1537269150522870}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1334828469364532}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -91,13 +91,13 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -122,33 +122,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114286128399612070
+--- !u!114 &114701125593715192
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1537269150522870}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1334828469364532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4507eebce981424d9c5f8727fc5ddc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxCount: 1
-  deltaTime: 0.2
---- !u!114 &114605866544037255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1537269150522870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0e454d75ec8146409d6d31b1216acf5, type: 3}
+  m_Script: {fileID: 11500000, guid: e3582d1c7d4196262b5c70e29e7c0f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isSfx: 1
   audioClips:
-  - {fileID: 8300000, guid: ddec7763d01f2834ba8774c9a59cdcc5, type: 3}
+  - {fileID: 8300000, guid: 752f68b20b47e784e9c0662f338075b2, type: 3}
   probability: []
   volumOffset: 0
   pitchOffset: 0
@@ -156,3 +143,16 @@ MonoBehaviour:
   cutoff: 0
   delayTime: 0
   autoDestroy: 0
+--- !u!114 &114785629804940381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1334828469364532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a37e59c578bc44061723623ff7d0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCount: 1
+  deltaTime: 0.2

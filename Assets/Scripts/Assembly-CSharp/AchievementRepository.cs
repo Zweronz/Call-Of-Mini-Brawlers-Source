@@ -1,25 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 public class AchievementRepository
 {
-	[CompilerGenerated]
-	private sealed class _003CInitialize_003Ec__AnonStorey1D
-	{
-		internal int type;
-
-		internal bool _003C_003Em__5(IAchievement data)
-		{
-			return data.Type == type;
-		}
-
-		internal bool _003C_003Em__6(IAchievement data)
-		{
-			return data.Type == type;
-		}
-	}
-
 	private Dictionary<string, IAchievement> datas = new Dictionary<string, IAchievement>();
 
 	private Dictionary<int, List<IAchievement>> datas2 = new Dictionary<int, List<IAchievement>>();
@@ -45,11 +28,10 @@ public class AchievementRepository
 		string empty = string.Empty;
 		while (list.Count > 0)
 		{
-			_003CInitialize_003Ec__AnonStorey1D _003CInitialize_003Ec__AnonStorey1D = new _003CInitialize_003Ec__AnonStorey1D();
-			_003CInitialize_003Ec__AnonStorey1D.type = list[0].Type;
+			int type = list[0].Type;
 			list2.Clear();
-			list2.AddRange(list.FindAll(_003CInitialize_003Ec__AnonStorey1D._003C_003Em__5));
-			list.RemoveAll(_003CInitialize_003Ec__AnonStorey1D._003C_003Em__6);
+			list2.AddRange(list.FindAll((IAchievement data) => data.Type == type));
+			list.RemoveAll((IAchievement data) => data.Type == type);
 			empty = string.Empty;
 			list3.Clear();
 			int num = list2.Count;

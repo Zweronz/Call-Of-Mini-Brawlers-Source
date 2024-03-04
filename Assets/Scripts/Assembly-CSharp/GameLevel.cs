@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Event;
 using UnityEngine;
 
@@ -34,9 +32,6 @@ public class GameLevel : MonoBehaviour
 	protected bool isOver;
 
 	protected MissionDetail detail;
-
-	[CompilerGenerated]
-	private static Predicate<string> _003C_003Ef__am_0024cacheE;
 
 	protected virtual void Awake()
 	{
@@ -90,11 +85,7 @@ public class GameLevel : MonoBehaviour
 		refreshZombies.AddRefreshPoints(worldCreator.refreshPoints.ToArray());
 		List<string> list = new List<string>();
 		list.AddRange(Player.Instance.Guns.ToArray());
-		if (_003C_003Ef__am_0024cacheE == null)
-		{
-			_003C_003Ef__am_0024cacheE = _003CInitLevel_003Em__10;
-		}
-		list.RemoveAll(_003C_003Ef__am_0024cacheE);
+		list.RemoveAll((string gunId) => string.IsNullOrEmpty(gunId));
 		weaponArsenal.TakeOver(gunAssembly.Create(DataCenter.Instance.Guns.Find(list.ToArray()).ToArray()).ToArray());
 		weaponArsenal.TakeOver(meleeWeaponAssembly.Create(DataCenter.Instance.MeleeWeapons.Find(Player.Instance.CurrentHero.meleeWeapon)));
 		hero = heroCreator.Create(DataCenter.Instance.Heros.Find(Player.Instance.CurrentHero.id));
@@ -233,8 +224,8 @@ public class GameLevel : MonoBehaviour
 		HeroData heroData = DataCenter.Instance.Heros.Find(detail.MissionDetailData.heroId);
 		EnemyBaseData enemyBaseData = DataCenter.Instance.BaseEnemies.Find(evt.ZombieID);
 		EnemyBaseHpDmgData enemyBaseHpDmgData = DataCenter.Instance.BaseEnemiesHpDmg.Find(detail.MissionDetailData.level);
-		int num = (int)((enemyBaseData.coefficientOfGold * enemyBaseHpDmgData.gold + UnityEngine.Random.Range(0f, enemyBaseHpDmgData.extra)) * heroData.coefficientOfGold);
-		int num2 = (int)((enemyBaseData.coefficientOfGold * enemyBaseHpDmgData.gold + UnityEngine.Random.Range(0f, enemyBaseHpDmgData.extra)) * heroData.coefficientOfGold);
+		int num = (int)((enemyBaseData.coefficientOfGold * enemyBaseHpDmgData.gold + Random.Range(0f, enemyBaseHpDmgData.extra)) * heroData.coefficientOfGold);
+		int num2 = (int)((enemyBaseData.coefficientOfGold * enemyBaseHpDmgData.gold + Random.Range(0f, enemyBaseHpDmgData.extra)) * heroData.coefficientOfGold);
 		Player.Instance.AddGold(num);
 		detail.MissionDetailData.getGold += num;
 		int num3 = Player.Instance.AddExp(num2);
@@ -273,11 +264,5 @@ public class GameLevel : MonoBehaviour
 	{
 		yield return new WaitForEndOfFrame();
 		gameso.GameStart("Level " + level);
-	}
-
-	[CompilerGenerated]
-	private static bool _003CInitLevel_003Em__10(string gunId)
-	{
-		return string.IsNullOrEmpty(gunId);
 	}
 }

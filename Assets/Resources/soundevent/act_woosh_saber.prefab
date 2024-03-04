@@ -3,25 +3,25 @@
 --- !u!1001 &100100000
 Prefab:
   serializedVersion: 2
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1234031045424222}
+  m_RootGameObject: {fileID: 1867561894676107}
   m_IsPrefabParent: 1
   m_IsExploded: 0
---- !u!1 &1234031045424222
+--- !u!1 &1867561894676107
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4015398407964789}
-  - 82: {fileID: 82978404602704270}
-  - 114: {fileID: 114436403432335544}
+  - 4: {fileID: 4683380343820133}
+  - 82: {fileID: 82874986741353222}
+  - 114: {fileID: 114686301473554647}
   m_Layer: 0
   m_Name: act_woosh_saber
   m_TagString: Untagged
@@ -29,24 +29,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4015398407964789
+--- !u!4 &4683380343820133
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1234031045424222}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1867561894676107}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!82 &82978404602704270
+--- !u!82 &82874986741353222
 AudioSource:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1234031045424222}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1867561894676107}
   m_Enabled: 1
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -96,21 +96,21 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &114436403432335544
+--- !u!114 &114686301473554647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1234031045424222}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1867561894676107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0e454d75ec8146409d6d31b1216acf5, type: 3}
+  m_Script: {fileID: 11500000, guid: e3582d1c7d4196262b5c70e29e7c0f4f, type: 3}
   m_Name:
   isSfx: 1
   audioClips:
-  - {fileID: 8300000, guid: a2eca3f2e87b0794d889732e0fc8b880, type: 3}
-  - {fileID: 8300000, guid: cd28843e3fc2fce479669587dcae58da, type: 3}
-  - {fileID: 8300000, guid: 549268334068ce944a32ca07ec556a52, type: 3}
+  - {fileID: 8300000, guid: 4bd7694e5142bb441929268a4c1c2396, type: 3}
+  - {fileID: 8300000, guid: 56b4c8abac14d394f870e07f1f055a93, type: 3}
+  - {fileID: 8300000, guid: f9dfa49ec3b3dfb48a50293c0de4f853, type: 3}
   probability: []
   volumOffset: 0
   pitchOffset: 0

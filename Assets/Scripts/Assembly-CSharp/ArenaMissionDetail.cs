@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Event;
 
 public class ArenaMissionDetail
@@ -57,22 +56,6 @@ public class ArenaMissionDetail
 		public HashSet<string> defeatFriends;
 	}
 
-	[CompilerGenerated]
-	private sealed class _003CChooseDefeatFriends_003Ec__AnonStorey20
-	{
-		internal long score;
-
-		internal ArenaMissionDetail _003C_003Ef__this;
-
-		internal void _003C_003Em__B(GameCenterModel.FriendScore fs)
-		{
-			if (fs.score.value < score)
-			{
-				_003C_003Ef__this.MissionDetailData.defeatFriends.Add(fs.score.playerId);
-			}
-		}
-	}
-
 	public Data MissionDetailData { get; private set; }
 
 	public ArenaMissionDetail()
@@ -108,10 +91,13 @@ public class ArenaMissionDetail
 
 	public void ChooseDefeatFriends(List<GameCenterModel.FriendScore> fsList, long score)
 	{
-		_003CChooseDefeatFriends_003Ec__AnonStorey20 _003CChooseDefeatFriends_003Ec__AnonStorey = new _003CChooseDefeatFriends_003Ec__AnonStorey20();
-		_003CChooseDefeatFriends_003Ec__AnonStorey.score = score;
-		_003CChooseDefeatFriends_003Ec__AnonStorey._003C_003Ef__this = this;
-		fsList.ForEach(_003CChooseDefeatFriends_003Ec__AnonStorey._003C_003Em__B);
+		fsList.ForEach(delegate(GameCenterModel.FriendScore fs)
+		{
+			if (fs.score.value < score)
+			{
+				MissionDetailData.defeatFriends.Add(fs.score.playerId);
+			}
+		});
 		if (MissionDetailData.defeatFriends.Contains(GameCenterBinding.playerIdentifier()))
 		{
 			MissionDetailData.defeatFriends.Remove(GameCenterBinding.playerIdentifier());

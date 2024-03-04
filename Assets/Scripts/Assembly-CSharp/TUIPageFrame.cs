@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class TUIPageFrame : TUIControlImpl
@@ -12,17 +11,6 @@ public class TUIPageFrame : TUIControlImpl
 	}
 
 	public delegate void PageFrameChangeHandler(TUIPageFrame pageFrame);
-
-	[CompilerGenerated]
-	private sealed class _003CRemove_003Ec__AnonStorey2F
-	{
-		internal TUIPage page;
-
-		internal bool _003C_003Em__55(TUIPage @object)
-		{
-			return @object == page;
-		}
-	}
 
 	public TUIGesture forwardGesture;
 
@@ -116,7 +104,10 @@ public class TUIPageFrame : TUIControlImpl
 	{
 		this.pages.AddRange(pages);
 		List<TUIPage> list = new List<TUIPage>(pages);
-		list.ForEach(_003CAddRange_003Em__53);
+		list.ForEach(delegate(TUIPage page)
+		{
+			InitPage(page);
+		});
 		Publish();
 	}
 
@@ -131,7 +122,10 @@ public class TUIPageFrame : TUIControlImpl
 	{
 		this.pages.InsertRange(position, pages);
 		List<TUIPage> list = new List<TUIPage>(pages);
-		list.ForEach(_003CInsertRange_003Em__54);
+		list.ForEach(delegate(TUIPage page)
+		{
+			InitPage(page);
+		});
 		Publish();
 	}
 
@@ -153,9 +147,7 @@ public class TUIPageFrame : TUIControlImpl
 
 	public void Remove(TUIPage page, bool deleteObj)
 	{
-		_003CRemove_003Ec__AnonStorey2F _003CRemove_003Ec__AnonStorey2F = new _003CRemove_003Ec__AnonStorey2F();
-		_003CRemove_003Ec__AnonStorey2F.page = page;
-		int position = pages.FindIndex(_003CRemove_003Ec__AnonStorey2F._003C_003Em__55);
+		int position = pages.FindIndex((TUIPage @object) => @object == page);
 		Remove(position, deleteObj);
 	}
 
@@ -414,17 +406,5 @@ public class TUIPageFrame : TUIControlImpl
 		{
 			handler(this);
 		}
-	}
-
-	[CompilerGenerated]
-	private void _003CAddRange_003Em__53(TUIPage page)
-	{
-		InitPage(page);
-	}
-
-	[CompilerGenerated]
-	private void _003CInsertRange_003Em__54(TUIPage page)
-	{
-		InitPage(page);
 	}
 }

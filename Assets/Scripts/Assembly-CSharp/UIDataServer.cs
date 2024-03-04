@@ -1,44 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Event;
 using UnityEngine;
 
 public class UIDataServer
 {
-	[CompilerGenerated]
-	private sealed class _003CCreateAllGunInfo_003Ec__AnonStorey2A
-	{
-		internal GunData gun;
-
-		internal bool _003C_003Em__46(GunData data)
-		{
-			return data.typeName.Equals(gun.typeName);
-		}
-	}
-
-	[CompilerGenerated]
-	private sealed class _003CCreateAllMeleeWeaponInfo_003Ec__AnonStorey2B
-	{
-		internal MeleeWeaponData meleeWeapon;
-
-		internal bool _003C_003Em__47(MeleeWeaponData data)
-		{
-			return data.typeName.Equals(meleeWeapon.typeName);
-		}
-	}
-
-	[CompilerGenerated]
-	private sealed class _003CHandleZS_PublishSpecialIAPEvent_003Ec__AnonStorey2C
-	{
-		internal ZS_PublishSpecialIAPEvent evt;
-
-		internal bool _003C_003Em__4D(SpecailIAPData data)
-		{
-			return data.notifyDay == evt.NotifyDay;
-		}
-	}
-
 	private static UIDataServer instance;
 
 	private readonly string linkString = "_&_";
@@ -50,33 +16,6 @@ public class UIDataServer
 	private ZombieStreetTimer.TimerData timerData;
 
 	private IAPData iapData;
-
-	[CompilerGenerated]
-	private static Predicate<GunData> _003C_003Ef__am_0024cache6;
-
-	[CompilerGenerated]
-	private static Predicate<HeroData> _003C_003Ef__am_0024cache7;
-
-	[CompilerGenerated]
-	private static Predicate<IItem> _003C_003Ef__am_0024cache8;
-
-	[CompilerGenerated]
-	private static Predicate<IItem> _003C_003Ef__am_0024cache9;
-
-	[CompilerGenerated]
-	private static Predicate<IItem> _003C_003Ef__am_0024cacheA;
-
-	[CompilerGenerated]
-	private static Predicate<IAPData> _003C_003Ef__am_0024cacheB;
-
-	[CompilerGenerated]
-	private static Predicate<Crystal2Gold> _003C_003Ef__am_0024cacheC;
-
-	[CompilerGenerated]
-	private static Predicate<IAchievement> _003C_003Ef__am_0024cacheD;
-
-	[CompilerGenerated]
-	private static Predicate<IAPData> _003C_003Ef__am_0024cacheE;
 
 	public static UIDataServer Instance
 	{
@@ -318,28 +257,23 @@ public class UIDataServer
 	{
 		List<ZS_EquipmentInfo> list = new List<ZS_EquipmentInfo>();
 		List<GunData> list2 = new List<GunData>();
-		GunRepository guns = DataCenter.Instance.Guns;
-		if (_003C_003Ef__am_0024cache6 == null)
-		{
-			_003C_003Ef__am_0024cache6 = _003CCreateAllGunInfo_003Em__45;
-		}
-		list2.AddRange(guns.FindAll(_003C_003Ef__am_0024cache6));
+		list2.AddRange(DataCenter.Instance.Guns.FindAll((GunData data) => true));
 		while (list2.Count > 0)
 		{
-			_003CCreateAllGunInfo_003Ec__AnonStorey2A _003CCreateAllGunInfo_003Ec__AnonStorey2A = new _003CCreateAllGunInfo_003Ec__AnonStorey2A();
+			GunData gun;
 			if (Player.Instance.ContainsGunType(list2[0].typeName))
 			{
-				_003CCreateAllGunInfo_003Ec__AnonStorey2A.gun = DataCenter.Instance.Guns.Find(Player.Instance.GetGunIdByType(list2[0].typeName));
+				gun = DataCenter.Instance.Guns.Find(Player.Instance.GetGunIdByType(list2[0].typeName));
 			}
 			else
 			{
-				_003CCreateAllGunInfo_003Ec__AnonStorey2A.gun = DataCenter.Instance.Guns.FindByTypeName(list2[0].typeName)[0];
+				gun = DataCenter.Instance.Guns.FindByTypeName(list2[0].typeName)[0];
 			}
-			if (_003CCreateAllGunInfo_003Ec__AnonStorey2A.gun.canAppear)
+			if (gun.canAppear)
 			{
-				list.Add(GunData2ZS_EquipmentInfo(_003CCreateAllGunInfo_003Ec__AnonStorey2A.gun));
+				list.Add(GunData2ZS_EquipmentInfo(gun));
 			}
-			list2.RemoveAll(_003CCreateAllGunInfo_003Ec__AnonStorey2A._003C_003Em__46);
+			list2.RemoveAll((GunData data) => data.typeName.Equals(gun.typeName));
 		}
 		return list;
 	}
@@ -351,17 +285,17 @@ public class UIDataServer
 		list2.Add(DataCenter.Instance.MeleeWeapons.Find(Player.Instance.CurrentHero.meleeWeapon));
 		while (list2.Count > 0)
 		{
-			_003CCreateAllMeleeWeaponInfo_003Ec__AnonStorey2B _003CCreateAllMeleeWeaponInfo_003Ec__AnonStorey2B = new _003CCreateAllMeleeWeaponInfo_003Ec__AnonStorey2B();
+			MeleeWeaponData meleeWeapon;
 			if (Player.Instance.ContainsMeleeWeaponType(list2[0].typeName))
 			{
-				_003CCreateAllMeleeWeaponInfo_003Ec__AnonStorey2B.meleeWeapon = DataCenter.Instance.MeleeWeapons.Find(Player.Instance.GetMeleeWeaponIdByType(list2[0].typeName));
+				meleeWeapon = DataCenter.Instance.MeleeWeapons.Find(Player.Instance.GetMeleeWeaponIdByType(list2[0].typeName));
 			}
 			else
 			{
-				_003CCreateAllMeleeWeaponInfo_003Ec__AnonStorey2B.meleeWeapon = DataCenter.Instance.MeleeWeapons.FindByTypeName(list2[0].typeName)[0];
+				meleeWeapon = DataCenter.Instance.MeleeWeapons.FindByTypeName(list2[0].typeName)[0];
 			}
-			list.Add(MeleeWeaponData2ZS_EquipmentInfo(_003CCreateAllMeleeWeaponInfo_003Ec__AnonStorey2B.meleeWeapon));
-			list2.RemoveAll(_003CCreateAllMeleeWeaponInfo_003Ec__AnonStorey2B._003C_003Em__47);
+			list.Add(MeleeWeaponData2ZS_EquipmentInfo(meleeWeapon));
+			list2.RemoveAll((MeleeWeaponData data) => data.typeName.Equals(meleeWeapon.typeName));
 		}
 		return list;
 	}
@@ -410,12 +344,7 @@ public class UIDataServer
 	{
 		List<ZS_AvatarPhotoInfo> list = new List<ZS_AvatarPhotoInfo>();
 		List<HeroData> list2 = new List<HeroData>();
-		HeroDataRepository heros = DataCenter.Instance.Heros;
-		if (_003C_003Ef__am_0024cache7 == null)
-		{
-			_003C_003Ef__am_0024cache7 = _003CHandleZS_PublishAllAvatarPhotoInfoEvent_003Em__48;
-		}
-		list2.AddRange(heros.FindAll(_003C_003Ef__am_0024cache7));
+		list2.AddRange(DataCenter.Instance.Heros.FindAll((HeroData data) => true));
 		foreach (HeroData item in list2)
 		{
 			list.Add(CreateZS_AvatarPhotoInfoByHeroId(item.id));
@@ -540,22 +469,9 @@ public class UIDataServer
 	{
 		List<ZS_ItemInfo> list = new List<ZS_ItemInfo>();
 		List<IItem> list2 = new List<IItem>();
-		ItemDataRepository items = DataCenter.Instance.Items;
-		if (_003C_003Ef__am_0024cache8 == null)
-		{
-			_003C_003Ef__am_0024cache8 = _003CHandleZS_PublishAllItemEvent_003Em__49;
-		}
-		list2.AddRange(items.FindAll(_003C_003Ef__am_0024cache8));
-		if (_003C_003Ef__am_0024cache9 == null)
-		{
-			_003C_003Ef__am_0024cache9 = _003CHandleZS_PublishAllItemEvent_003Em__4A;
-		}
-		List<IItem> collection = list2.FindAll(_003C_003Ef__am_0024cache9);
-		if (_003C_003Ef__am_0024cacheA == null)
-		{
-			_003C_003Ef__am_0024cacheA = _003CHandleZS_PublishAllItemEvent_003Em__4B;
-		}
-		list2.RemoveAll(_003C_003Ef__am_0024cacheA);
+		list2.AddRange(DataCenter.Instance.Items.FindAll((IItem item) => true));
+		List<IItem> collection = list2.FindAll((IItem item) => !item.BaseData.canAppear);
+		list2.RemoveAll((IItem item) => !item.BaseData.canAppear);
 		list2.AddRange(collection);
 		foreach (IItem item in list2)
 		{
@@ -602,12 +518,7 @@ public class UIDataServer
 	private void HandleZS_PublishIAPEvent(object sender, ZS_PublishIAPEvent evt)
 	{
 		List<ZS_IapInfo> list = new List<ZS_IapInfo>();
-		IAPDataRepository iAPs = DataCenter.Instance.IAPs;
-		if (_003C_003Ef__am_0024cacheB == null)
-		{
-			_003C_003Ef__am_0024cacheB = _003CHandleZS_PublishIAPEvent_003Em__4C;
-		}
-		List<IAPData> list2 = iAPs.FindAll(_003C_003Ef__am_0024cacheB);
+		List<IAPData> list2 = DataCenter.Instance.IAPs.FindAll((IAPData data) => true);
 		foreach (IAPData item in list2)
 		{
 			list.Add(IAPData2ZS_IapInfo(item));
@@ -617,23 +528,16 @@ public class UIDataServer
 
 	private void HandleZS_PublishSpecialIAPEvent(object sender, ZS_PublishSpecialIAPEvent evt)
 	{
-		_003CHandleZS_PublishSpecialIAPEvent_003Ec__AnonStorey2C _003CHandleZS_PublishSpecialIAPEvent_003Ec__AnonStorey2C = new _003CHandleZS_PublishSpecialIAPEvent_003Ec__AnonStorey2C();
-		_003CHandleZS_PublishSpecialIAPEvent_003Ec__AnonStorey2C.evt = evt;
-		List<SpecailIAPData> list = DataCenter.Instance.SpecialIAPs.FindAll(_003CHandleZS_PublishSpecialIAPEvent_003Ec__AnonStorey2C._003C_003Em__4D);
+		List<SpecailIAPData> list = DataCenter.Instance.SpecialIAPs.FindAll((SpecailIAPData data) => data.notifyDay == evt.NotifyDay);
 		if (list != null && list.Count > 0)
 		{
-			_003CHandleZS_PublishSpecialIAPEvent_003Ec__AnonStorey2C.evt.SpecialIAPInfo(IAPData2ZS_IapInfo(list[0]));
+			evt.SpecialIAPInfo(IAPData2ZS_IapInfo(list[0]));
 		}
 	}
 
 	private void HandleZS_PublishIAPGoldEvent(object sender, ZS_PublishIAPGoldEvent evt)
 	{
-		Crystal2GoldDataRepository crystal2GoldData = DataCenter.Instance.Crystal2GoldData;
-		if (_003C_003Ef__am_0024cacheC == null)
-		{
-			_003C_003Ef__am_0024cacheC = _003CHandleZS_PublishIAPGoldEvent_003Em__4E;
-		}
-		List<Crystal2Gold> list = crystal2GoldData.FindAll(_003C_003Ef__am_0024cacheC);
+		List<Crystal2Gold> list = DataCenter.Instance.Crystal2GoldData.FindAll((Crystal2Gold data) => true);
 		List<ZS_IapGoldInfo> list2 = new List<ZS_IapGoldInfo>();
 		foreach (Crystal2Gold item in list)
 		{
@@ -1083,12 +987,7 @@ public class UIDataServer
 	{
 		AchievementTool.InitializeAllAchievements();
 		AchievementTool.CalculateAchievements();
-		AchievementRepository achievements = DataCenter.Instance.Achievements;
-		if (_003C_003Ef__am_0024cacheD == null)
-		{
-			_003C_003Ef__am_0024cacheD = _003CHasAchievementCompeleted_003Em__4F;
-		}
-		List<IAchievement> list = achievements.FindAll(_003C_003Ef__am_0024cacheD);
+		List<IAchievement> list = DataCenter.Instance.Achievements.FindAll((IAchievement a) => a.Progress == 1f && a.State == AchievementState.Processing);
 		if (list == null)
 		{
 			return false;
@@ -1161,9 +1060,9 @@ public class UIDataServer
 		}
 		SpecailIAPData specailIAPData = data.data as SpecailIAPData;
 		IAPData data2 = data.data as IAPData;
-		switch ((int)Enum.ToObject(typeof(IAPPlugin.Status), IAPPlugin.GetPurchaseStatus()))
+		switch ((IAPPlugin.Status)(int)Enum.ToObject(typeof(IAPPlugin.Status), IAPPlugin.GetPurchaseStatus()))
 		{
-		case 1:
+		case IAPPlugin.Status.kSuccess:
 			Player.Instance.AddIAP(data2);
 			Player.Instance.Save(true);
 			if (specailIAPData != null)
@@ -1176,7 +1075,7 @@ public class UIDataServer
 			}
 			ZombieStreetTimer.RemoveTimer(timerData);
 			break;
-		case -1:
+		case IAPPlugin.Status.kError:
 			if (specailIAPData != null)
 			{
 				EventCenter.Instance.Publish(this, new ZS_PublishSpecialIAPResultEvent(-1));
@@ -1187,7 +1086,7 @@ public class UIDataServer
 			}
 			ZombieStreetTimer.RemoveTimer(timerData);
 			break;
-		case -2:
+		case IAPPlugin.Status.kUserCancel:
 			if (specailIAPData != null)
 			{
 				EventCenter.Instance.Publish(this, new ZS_PublishSpecialIAPResultEvent(-1));
@@ -1198,7 +1097,7 @@ public class UIDataServer
 			}
 			ZombieStreetTimer.RemoveTimer(timerData);
 			break;
-		case 0:
+		case IAPPlugin.Status.kBuying:
 			break;
 		}
 	}
@@ -1215,12 +1114,7 @@ public class UIDataServer
 
 	private void InitializeAmazonIAP()
 	{
-		IAPDataRepository iAPs = DataCenter.Instance.IAPs;
-		if (_003C_003Ef__am_0024cacheE == null)
-		{
-			_003C_003Ef__am_0024cacheE = _003CInitializeAmazonIAP_003Em__50;
-		}
-		List<IAPData> list = iAPs.FindAll(_003C_003Ef__am_0024cacheE);
+		List<IAPData> list = DataCenter.Instance.IAPs.FindAll((IAPData data) => true);
 		List<string> list2 = new List<string>();
 		foreach (IAPData item in list)
 		{
@@ -1308,59 +1202,5 @@ public class UIDataServer
 				EventCenter.Instance.Publish(this, new ZS_PublishIAPResultEvent(-1));
 			}
 		}
-	}
-
-	[CompilerGenerated]
-	private static bool _003CCreateAllGunInfo_003Em__45(GunData data)
-	{
-		return true;
-	}
-
-	[CompilerGenerated]
-	private static bool _003CHandleZS_PublishAllAvatarPhotoInfoEvent_003Em__48(HeroData data)
-	{
-		return true;
-	}
-
-	[CompilerGenerated]
-	private static bool _003CHandleZS_PublishAllItemEvent_003Em__49(IItem item)
-	{
-		return true;
-	}
-
-	[CompilerGenerated]
-	private static bool _003CHandleZS_PublishAllItemEvent_003Em__4A(IItem item)
-	{
-		return !item.BaseData.canAppear;
-	}
-
-	[CompilerGenerated]
-	private static bool _003CHandleZS_PublishAllItemEvent_003Em__4B(IItem item)
-	{
-		return !item.BaseData.canAppear;
-	}
-
-	[CompilerGenerated]
-	private static bool _003CHandleZS_PublishIAPEvent_003Em__4C(IAPData data)
-	{
-		return true;
-	}
-
-	[CompilerGenerated]
-	private static bool _003CHandleZS_PublishIAPGoldEvent_003Em__4E(Crystal2Gold data)
-	{
-		return true;
-	}
-
-	[CompilerGenerated]
-	private static bool _003CHasAchievementCompeleted_003Em__4F(IAchievement a)
-	{
-		return a.Progress == 1f && a.State == AchievementState.Processing;
-	}
-
-	[CompilerGenerated]
-	private static bool _003CInitializeAmazonIAP_003Em__50(IAPData data)
-	{
-		return true;
 	}
 }

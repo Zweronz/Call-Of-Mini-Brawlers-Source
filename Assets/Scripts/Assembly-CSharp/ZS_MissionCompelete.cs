@@ -124,16 +124,16 @@ public class ZS_MissionCompelete : MonoBehaviour
 		float prePercent = info.preExperience;
 		float currentPercent = info.currentExperience;
 		float time = Time.deltaTime;
-		float speed2 = 0f;
+		float speed = 0f;
 		int count2 = 0;
-		speed2 = ((info.levelUp <= 0) ? ((currentPercent - prePercent) / seconds) : ((currentPercent + (float)info.levelUp - prePercent) / seconds));
+		speed = ((info.levelUp <= 0) ? ((currentPercent - prePercent) / seconds) : ((currentPercent + (float)info.levelUp - prePercent) / seconds));
 		while (true)
 		{
 			if (info.levelUp > 0)
 			{
 				if (count2 == 0)
 				{
-					prePercent += speed2 * time;
+					prePercent += speed * time;
 					if (prePercent >= 1f)
 					{
 						ZS_TUIMisc.SetLabel(levPercentLab, "0%");
@@ -150,7 +150,7 @@ public class ZS_MissionCompelete : MonoBehaviour
 				}
 				else if (count2 > 0 && count2 < info.levelUp)
 				{
-					prePercent += speed2 * time;
+					prePercent += speed * time;
 					if (prePercent >= 1f)
 					{
 						ZS_TUIMisc.SetLabel(levPercentLab, "0%");
@@ -167,7 +167,7 @@ public class ZS_MissionCompelete : MonoBehaviour
 				}
 				else if (count2 == info.levelUp)
 				{
-					prePercent += speed2 * time;
+					prePercent += speed * time;
 					if (prePercent >= info.currentExperience)
 					{
 						ZS_TUIMisc.SetLabel(levPercentLab, Mathf.Floor(currentPercent * 100f) + "%");
@@ -181,7 +181,7 @@ public class ZS_MissionCompelete : MonoBehaviour
 			}
 			else
 			{
-				prePercent += speed2 * time;
+				prePercent += speed * time;
 				if (prePercent >= currentPercent)
 				{
 					break;

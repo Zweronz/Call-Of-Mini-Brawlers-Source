@@ -3,26 +3,26 @@
 --- !u!1001 &100100000
 Prefab:
   serializedVersion: 2
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1275210969740123}
+  m_RootGameObject: {fileID: 1912688012348890}
   m_IsPrefabParent: 1
   m_IsExploded: 0
---- !u!1 &1275210969740123
+--- !u!1 &1912688012348890
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4059790183561912}
-  - 65: {fileID: 65381243479845722}
-  - 114: {fileID: 114543099807493945}
-  - 54: {fileID: 54553797960738021}
+  - 4: {fileID: 4023042659450476}
+  - 65: {fileID: 65711788889299150}
+  - 114: {fileID: 114905653324117259}
+  - 54: {fileID: 54060763934296292}
   m_Layer: 14
   m_Name: Chest
   m_TagString: Destructible
@@ -30,53 +30,53 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4059790183561912
+--- !u!4 &4023042659450476
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1275210969740123}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1912688012348890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4015329355365461}
+  - {fileID: 4647189552875211}
   m_Father: {fileID: 0}
---- !u!65 &65381243479845722
+--- !u!65 &65711788889299150
 BoxCollider:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1275210969740123}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1912688012348890}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   m_Size: {x: 10, y: 2, z: 0.8}
   m_Center: {x: 0, y: 0.8, z: 0}
---- !u!114 &114543099807493945
+--- !u!114 &114905653324117259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1275210969740123}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1912688012348890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 810a117fdc39bcf4eb5d755f3736552a, type: 3}
+  m_Script: {fileID: 11500000, guid: a22069ea9520edc342618df1685db31d, type: 3}
   m_Name:
   hp: 0
-  crashPrefab: {fileID: 1717480532400736, guid: ed4c8e071c4429546aab60a37dc796f4, type: 2}
+  crashPrefab: {fileID: 1816880652776390, guid: 4d69c620ff7a44047ae8a781340fb868, type: 2}
   treasurePrefabs:
-  - {fileID: 1005862216075900, guid: f78dc04ad858840428b516c612459882, type: 2}
-  - {fileID: 1432013265135399, guid: 367b740e58ea08c499aab94a53c0b5da, type: 2}
-  - {fileID: 1756356497450285, guid: b6da8e89e05bb084fb8ed86106b7418f, type: 2}
---- !u!54 &54553797960738021
+  - {fileID: 1786134473530166, guid: e0ad7f308bcbbae4cbda777245c97711, type: 2}
+  - {fileID: 1608883701947577, guid: cc79c22793f911640b76635723ca04f6, type: 2}
+  - {fileID: 1777783172999971, guid: 3005a652debd91a45b614c5e42a85055, type: 2}
+--- !u!54 &54060763934296292
 Rigidbody:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1275210969740123}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1912688012348890}
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
@@ -85,17 +85,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &1956302051665606
+--- !u!1 &1262074367368231
 GameObject:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
   m_Component:
-  - 4: {fileID: 4015329355365461}
-  - 33: {fileID: 33904164015399906}
-  - 23: {fileID: 23237868107756684}
-  - 111: {fileID: 111737717232568438}
+  - 4: {fileID: 4647189552875211}
+  - 33: {fileID: 33502550434704032}
+  - 23: {fileID: 23328558398410013}
+  - 111: {fileID: 111115035891745828}
   m_Layer: 14
   m_Name: treasure chest
   m_TagString: Untagged
@@ -103,49 +103,49 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4015329355365461
+--- !u!4 &4647189552875211
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1956302051665606}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1262074367368231}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4059790183561912}
---- !u!33 &33904164015399906
+  m_Father: {fileID: 4023042659450476}
+--- !u!33 &33502550434704032
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1956302051665606}
-  m_Mesh: {fileID: 4300000, guid: adb563e7d826daf48993b87fb80b5ee2, type: 2}
---- !u!23 &23237868107756684
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1262074367368231}
+  m_Mesh: {fileID: 4300000, guid: 26cf7739f0979114c98a2e2007eec3e4, type: 2}
+--- !u!23 &23328558398410013
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1956302051665606}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1262074367368231}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 16371502286dee5428f32a2a279dabdc, type: 2}
+  - {fileID: 2100000, guid: 8df48f99a5b55d54eabed46c95545416, type: 2}
   m_SubsetIndices: []
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
---- !u!111 &111737717232568438
+--- !u!111 &111115035891745828
 Animation:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1956302051665606}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1262074367368231}
   m_Enabled: 1
   m_Animation: {fileID: 0}
   m_Animations: []

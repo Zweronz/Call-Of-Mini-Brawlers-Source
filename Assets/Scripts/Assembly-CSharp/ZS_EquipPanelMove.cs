@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Event;
 using UnityEngine;
 
@@ -106,12 +105,6 @@ public class ZS_EquipPanelMove : MonoBehaviour
 	public static int unwiledLocation;
 
 	private ZS_AnimaitonPlay aPlay;
-
-	[CompilerGenerated]
-	private static Predicate<ZS_EquipmentInfo> _003C_003Ef__am_0024cache30;
-
-	[CompilerGenerated]
-	private static Predicate<ZS_ItemInfo> _003C_003Ef__am_0024cache31;
 
 	private void Awake()
 	{
@@ -280,12 +273,7 @@ public class ZS_EquipPanelMove : MonoBehaviour
 		{
 			component.equipUnOwn.SetActiveRecursively(true);
 			component.equipOwn.SetActiveRecursively(false);
-			List<ZS_EquipmentInfo> list = allGun;
-			if (_003C_003Ef__am_0024cache30 == null)
-			{
-				_003C_003Ef__am_0024cache30 = _003CSetSelectEquipInfo_003Em__5C;
-			}
-			info = list.Find(_003C_003Ef__am_0024cache30);
+			info = allGun.Find((ZS_EquipmentInfo einfo) => !einfo.IsOwn);
 			if (info == null)
 			{
 				info = allGun[0];
@@ -557,12 +545,7 @@ public class ZS_EquipPanelMove : MonoBehaviour
 		component.SetAllBtnUnVisable();
 		if (info == null)
 		{
-			List<ZS_ItemInfo> list = itemList;
-			if (_003C_003Ef__am_0024cache31 == null)
-			{
-				_003C_003Ef__am_0024cache31 = _003CSetScrollListItemInfo_003Em__5D;
-			}
-			info = list.Find(_003C_003Ef__am_0024cache31);
+			info = itemList.Find((ZS_ItemInfo itemInfo) => !itemInfo.IsUsing);
 		}
 		component.itemInfo = info;
 		component.itemTopInfo.ShowItemTopInfo(info.Image, info.Name);
@@ -964,17 +947,5 @@ public class ZS_EquipPanelMove : MonoBehaviour
 				}
 			}
 		}
-	}
-
-	[CompilerGenerated]
-	private static bool _003CSetSelectEquipInfo_003Em__5C(ZS_EquipmentInfo einfo)
-	{
-		return !einfo.IsOwn;
-	}
-
-	[CompilerGenerated]
-	private static bool _003CSetScrollListItemInfo_003Em__5D(ZS_ItemInfo itemInfo)
-	{
-		return !itemInfo.IsUsing;
 	}
 }

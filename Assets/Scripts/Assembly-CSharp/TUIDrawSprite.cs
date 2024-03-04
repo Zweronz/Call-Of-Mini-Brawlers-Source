@@ -124,7 +124,7 @@ public class TUIDrawSprite : MonoBehaviour
 			if (null == clipedMat)
 			{
 				clipedMat = new Material(sharedMat);
-				clipedMat.shader = Shader.Find("Triniti/Sprite");
+				clipedMat.shader = Shader.Find("Unlit/Transparent Colored TwoTexture Vertex Color(HardClip)");
 			}
 			meshRenderer.sharedMaterial = clipedMat;
 		}

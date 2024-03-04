@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Startup : MonoBehaviour
@@ -31,9 +29,6 @@ public class Startup : MonoBehaviour
 
 	public float waitingTime = 0.5f;
 
-	[CompilerGenerated]
-	private static Action<IAchievement> _003C_003Ef__am_0024cacheD;
-
 	private void Start()
 	{
 		ZS_UIAudioManager.PlayMusic(SoundKind.Mus_map, true);
@@ -58,11 +53,10 @@ public class Startup : MonoBehaviour
 	private void CalculateAchievements()
 	{
 		List<IAchievement> all = DataCenter.Instance.Achievements.GetAll();
-		if (_003C_003Ef__am_0024cacheD == null)
+		all.ForEach(delegate(IAchievement achievement)
 		{
-			_003C_003Ef__am_0024cacheD = _003CCalculateAchievements_003Em__42;
-		}
-		all.ForEach(_003C_003Ef__am_0024cacheD);
+			achievement.Process();
+		});
 		DataCenter.Instance.Achievements.InitializeAllAchievements();
 	}
 
@@ -106,11 +100,5 @@ public class Startup : MonoBehaviour
 				needShowStartBtn = false;
 			}
 		}
-	}
-
-	[CompilerGenerated]
-	private static void _003CCalculateAchievements_003Em__42(IAchievement achievement)
-	{
-		achievement.Process();
 	}
 }

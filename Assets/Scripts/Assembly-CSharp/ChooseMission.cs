@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class ChooseMission : MonoBehaviour
@@ -27,9 +25,6 @@ public class ChooseMission : MonoBehaviour
 
 	private List<IMission> samePriorityMissions = new List<IMission>();
 
-	[CompilerGenerated]
-	private static Predicate<MapPointData> _003C_003Ef__am_0024cacheB;
-
 	private void Awake()
 	{
 		Time.timeScale = 1f;
@@ -48,7 +43,7 @@ public class ChooseMission : MonoBehaviour
 		if (Player.Instance.NeedRefreshMission)
 		{
 			Player.Instance.ClearMission();
-			int num = UnityEngine.Random.Range(1, count);
+			int num = Random.Range(1, count);
 			CreateMissions(num);
 			RandomMapPoints(num);
 			for (int i = 0; i < mapPoints.Count && i < choosedMissions.Count; i++)
@@ -64,16 +59,11 @@ public class ChooseMission : MonoBehaviour
 	private void RandomMapPoints(int count)
 	{
 		mapPoints.Clear();
-		MapPointDataRepository mapPointDataRepository = DataCenter.Instance.MapPoints;
-		if (_003C_003Ef__am_0024cacheB == null)
-		{
-			_003C_003Ef__am_0024cacheB = _003CRandomMapPoints_003Em__18;
-		}
-		List<MapPointData> list = mapPointDataRepository.FindAll(_003C_003Ef__am_0024cacheB);
+		List<MapPointData> list = DataCenter.Instance.MapPoints.FindAll((MapPointData data) => true);
 		int num = count;
 		while (num > 0 && list.Count > 0)
 		{
-			int index = UnityEngine.Random.Range(0, list.Count);
+			int index = Random.Range(0, list.Count);
 			mapPoints.Add(list[index].id);
 			list.RemoveAt(index);
 			num--;
@@ -87,7 +77,7 @@ public class ChooseMission : MonoBehaviour
 		{
 			MapPointData mapPointData = DataCenter.Instance.MapPoints.Find(mission.Key);
 			Vector2 vector = LeftTop2Center(mapPointData.x, mapPointData.y);
-			GameObject gameObject = (GameObject)UnityEngine.Object.Instantiate(missionBtnPrefab, new Vector3(vector.x, vector.y, -2f), Quaternion.identity);
+			GameObject gameObject = (GameObject)Object.Instantiate(missionBtnPrefab, new Vector3(vector.x, vector.y, -2f), Quaternion.identity);
 			MissionBtn component = gameObject.GetComponent<MissionBtn>();
 			component.board = board;
 			component.mapPointId = mission.Key;
@@ -192,11 +182,5 @@ public class ChooseMission : MonoBehaviour
 			ZS_UIAudioManager.PlayAudio(SoundKind.UI_ok, true);
 			Application.LoadLevel(ZS_TUIMisc.gloryScene);
 		}
-	}
-
-	[CompilerGenerated]
-	private static bool _003CRandomMapPoints_003Em__18(MapPointData data)
-	{
-		return true;
 	}
 }
