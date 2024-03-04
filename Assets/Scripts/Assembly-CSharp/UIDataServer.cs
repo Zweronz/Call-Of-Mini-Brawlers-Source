@@ -1107,7 +1107,7 @@ public class UIDataServer
 		int num = MiscPlugin.ShowMessageBox(string.Empty, "If you like this game, please rate it 5 stars", new List<string> { "Remind me later", "Yes,rate it!" });
 		if (num != 0 && num == 1)
 		{
-			Application.OpenURL(ReviewURL);
+			Application.OpenURL("https://www.youtube.com/watch?v=gyNtZeN_gTQ&list=PLameREsjcp75af75spbRZoHwC0ICqSeJ3");
 			Player.Instance.ShowedReview = true;
 		}
 	}

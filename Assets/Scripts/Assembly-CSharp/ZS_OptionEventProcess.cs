@@ -33,7 +33,7 @@ public class ZS_OptionEventProcess : MonoBehaviour
 
 	private bool SupportEvent()
 	{
-		Application.OpenURL("http://www.trinitigame.com/support?game=comb&version=" + Player.Instance.Version);
+		Application.OpenURL("https://www.youtube.com/watch?v=gyNtZeN_gTQ&list=PLameREsjcp75af75spbRZoHwC0ICqSeJ3");
 		return true;
 	}
 
@@ -52,7 +52,7 @@ public class ZS_OptionEventProcess : MonoBehaviour
 		if (eventType == 3)
 		{
 			ZS_UIAudioManager.PlayAudio(SoundKind.UI_ok);
-			Application.OpenURL(UIDataServer.ReviewURL);
+			Application.OpenURL("https://www.youtube.com/watch?v=gyNtZeN_gTQ&list=PLameREsjcp75af75spbRZoHwC0ICqSeJ3");
 		}
 	}
 

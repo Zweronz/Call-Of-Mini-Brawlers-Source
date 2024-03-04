@@ -10,17 +10,17 @@ public class MainScene : MonoBehaviour
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			AndroidJNI.AttachCurrentThread();
+			//AndroidJNI.AttachCurrentThread();
 		}
 		TapjoyPlugin.EnableLogging(true);
 		TapjoyPlugin.SetCallbackHandler("MainScene");
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			TapjoyPlugin.RequestTapjoyConnect("bba49f11-b87f-4c0f-9632-21aa810dd6f1", "yiQIURFEeKm0zbOggubu");
+			//TapjoyPlugin.RequestTapjoyConnect("bba49f11-b87f-4c0f-9632-21aa810dd6f1", "yiQIURFEeKm0zbOggubu");
 		}
 		else if (Application.platform == RuntimePlatform.IPhonePlayer)
 		{
-			TapjoyPlugin.RequestTapjoyConnect("93e78102-cbd7-4ebf-85cc-315ba83ef2d5", "JWxgS26URM0XotaghqGn");
+			//TapjoyPlugin.RequestTapjoyConnect("93e78102-cbd7-4ebf-85cc-315ba83ef2d5", "JWxgS26URM0XotaghqGn");
 		}
 		TapjoyPlugin.GetDisplayAd();
 	}

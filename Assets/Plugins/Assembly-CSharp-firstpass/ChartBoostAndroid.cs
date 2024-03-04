@@ -12,17 +12,17 @@ public class ChartBoostAndroid
 		{
 			return;
 		}
-		using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.chartboost.ChartboostPlugin"))
-		{
-			_plugin = androidJavaClass.CallStatic<AndroidJavaObject>("instance", new object[0]);
-		}
+		//using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.chartboost.ChartboostPlugin"))
+		//{
+		//	_plugin = androidJavaClass.CallStatic<AndroidJavaObject>("instance", new object[0]);
+		//}
 	}
 
 	public static void onStart()
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			_plugin.Call("onStart");
+			//_plugin.Call("onStart");
 		}
 	}
 
@@ -30,7 +30,7 @@ public class ChartBoostAndroid
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			_plugin.Call("onDestroy");
+			//_plugin.Call("onDestroy");
 		}
 	}
 
@@ -38,7 +38,7 @@ public class ChartBoostAndroid
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			_plugin.Call("onStop");
+			//_plugin.Call("onStop");
 		}
 	}
 
@@ -46,7 +46,7 @@ public class ChartBoostAndroid
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			_plugin.Call("onBackPressed");
+			//_plugin.Call("onBackPressed");
 		}
 	}
 
@@ -55,7 +55,7 @@ public class ChartBoostAndroid
 		if (Application.platform == RuntimePlatform.Android)
 		{
 			Debug.Log(" --------------------------------------- init");
-			_plugin.Call("init", appId, appSignature, shouldRequestInterstitialsInFirstSession);
+			//_plugin.Call("init", appId, appSignature, shouldRequestInterstitialsInFirstSession);
 			Debug.Log(" --------------------------------------- init end");
 		}
 	}
@@ -66,21 +66,21 @@ public class ChartBoostAndroid
 		if (Application.platform == RuntimePlatform.Android)
 		{
 			Debug.Log(" --------------------------------------- cacheInterstitial2");
-			if (location == null)
-			{
-				location = string.Empty;
-			}
-			_plugin.Call("cacheInterstitial", location);
+			//if (location == null)
+			//{
+			//	location = string.Empty;
+			//}
+			//_plugin.Call("cacheInterstitial", location);
 			Debug.Log(" --------------------------------------- cacheInterstitial3");
 		}
 	}
 
 	public static bool hasCachedInterstitial(string location)
 	{
-		if (Application.platform != RuntimePlatform.Android)
-		{
+		//if (Application.platform != RuntimePlatform.Android)
+		//{
 			return false;
-		}
+		//}
 		if (location == null)
 		{
 			location = string.Empty;
@@ -92,11 +92,11 @@ public class ChartBoostAndroid
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			if (location == null)
-			{
-				location = string.Empty;
-			}
-			_plugin.Call("showInterstitial", location);
+			//if (location == null)
+			//{
+			//	location = string.Empty;
+			//}
+			//_plugin.Call("showInterstitial", location);
 		}
 	}
 
@@ -104,17 +104,17 @@ public class ChartBoostAndroid
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			_plugin.Call("cacheMoreApps");
+			//_plugin.Call("cacheMoreApps");
 		}
 	}
 
 	public static bool hasCachedMoreApps()
 	{
-		if (Application.platform != RuntimePlatform.Android)
-		{
+		//if (Application.platform != RuntimePlatform.Android)
+		//{
 			return false;
-		}
-		return _plugin.Call<bool>("hasCachedMoreApps", new object[0]);
+		//}
+		//return _plugin.Call<bool>("hasCachedMoreApps", new object[0]);
 	}
 
 	public static void showMoreApps()
@@ -129,8 +129,8 @@ public class ChartBoostAndroid
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			metaData = metaData ?? new Dictionary<string, object>();
-			_plugin.Call("trackEvent", eventIdentifier, value, metaData.toJson());
+			//etaData = metaData ?? new Dictionary<string, object>();
+			//_plugin.Call("trackEvent", eventIdentifier, value, metaData.toJson());
 		}
 	}
 }

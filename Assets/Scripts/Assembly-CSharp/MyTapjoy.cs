@@ -34,11 +34,11 @@ public class MyTapjoy : MonoBehaviour
 		TapjoyPlugin.SetCallbackHandler(base.gameObject.name);
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			TapjoyPlugin.RequestTapjoyConnect(androidAppId, androidSecretKey);
+			//TapjoyPlugin.RequestTapjoyConnect(androidAppId, androidSecretKey);
 		}
 		else if (Application.platform == RuntimePlatform.IPhonePlayer)
 		{
-			TapjoyPlugin.RequestTapjoyConnect(iphoneAppId, iphoneSecretKey);
+			//TapjoyPlugin.RequestTapjoyConnect(iphoneAppId, iphoneSecretKey);
 		}
 		TapjoyPlugin.GetTapPoints();
 	}

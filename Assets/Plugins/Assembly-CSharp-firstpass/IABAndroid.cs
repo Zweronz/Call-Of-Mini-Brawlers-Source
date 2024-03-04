@@ -10,17 +10,17 @@ public class IABAndroid
 		{
 			return;
 		}
-		using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.prime31.IABPlugin"))
-		{
-			_plugin = androidJavaClass.CallStatic<AndroidJavaObject>("instance", new object[0]);
-		}
+		//using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.prime31.IABPlugin"))
+		//{
+		//	_plugin = androidJavaClass.CallStatic<AndroidJavaObject>("instance", new object[0]);
+		//}
 	}
 
 	public static void init(string publicKey)
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			_plugin.Call("init", publicKey);
+			//_plugin.Call("init", publicKey);
 		}
 	}
 
@@ -28,7 +28,7 @@ public class IABAndroid
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			_plugin.Call("startCheckBillingAvailableRequest");
+			//_plugin.Call("startCheckBillingAvailableRequest");
 		}
 	}
 
@@ -36,7 +36,7 @@ public class IABAndroid
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			_plugin.Call("restoreTransactions");
+			//_plugin.Call("restoreTransactions");
 		}
 	}
 
@@ -44,25 +44,25 @@ public class IABAndroid
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			_plugin.Call("purchaseProduct", productId);
+			//_plugin.Call("purchaseProduct", productId);
 		}
 	}
 
 	public static void testPurchaseProduct()
 	{
-		purchaseProduct("android.test.purchased");
+		//purchaseProduct("android.test.purchased");
 	}
 
 	public static void testRefundedProduct()
 	{
-		purchaseProduct("android.test.refunded");
+		//purchaseProduct("android.test.refunded");
 	}
 
 	public static void stopBillingService()
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			_plugin.Call("stopService");
+			//_plugin.Call("stopService");
 		}
 	}
 }

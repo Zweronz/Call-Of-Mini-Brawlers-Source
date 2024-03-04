@@ -11,18 +11,18 @@ public class AmazonIAP
 		{
 			return;
 		}
-		using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.prime31.AmazonIAPPlugin"))
-		{
-			_plugin = androidJavaClass.CallStatic<AndroidJavaObject>("instance", new object[0]);
-		}
+		//using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.prime31.AmazonIAPPlugin"))
+		//{
+		//	_plugin = androidJavaClass.CallStatic<AndroidJavaObject>("instance", new object[0]);
+		//}
 	}
 
 	public static void initiateItemDataRequest(string[] items)
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			IntPtr methodID = AndroidJNI.GetMethodID(_plugin.GetRawClass(), "initiateItemDataRequest", "([Ljava/lang/String;)V");
-			AndroidJNI.CallVoidMethod(_plugin.GetRawObject(), methodID, AndroidJNIHelper.CreateJNIArgArray(new object[1] { items }));
+			//IntPtr methodID = AndroidJNI.GetMethodID(_plugin.GetRawClass(), "initiateItemDataRequest", "([Ljava/lang/String;)V");
+			//AndroidJNI.CallVoidMethod(_plugin.GetRawObject(), methodID, AndroidJNIHelper.CreateJNIArgArray(new object[1] { items }));
 		}
 	}
 
@@ -30,7 +30,7 @@ public class AmazonIAP
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			_plugin.Call("initiatePurchaseRequest", sku);
+			//_plugin.Call("initiatePurchaseRequest", sku);
 		}
 	}
 
@@ -38,7 +38,7 @@ public class AmazonIAP
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			_plugin.Call("initiateGetUserIdRequest");
+			//_plugin.Call("initiateGetUserIdRequest");
 		}
 	}
 }
