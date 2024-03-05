@@ -106,11 +106,22 @@ public class ZS_AvatarPhotoEventProcess : MonoBehaviour
 					{
 						component3.priceIcon.texture = "jinbi";
 						component3.priceLab.Text = ZS_TUIMisc.FormatToString(avatarPhotoInfo.money.Gold);
+						component3.priceLab.color = new Color(1f, 1f, 0);
+						component3.transform.Find("BuyLab").gameObject.SetActive(true);
 					}
 					else if (avatarPhotoInfo.money.Tcystal > 0.0)
 					{
 						component3.priceIcon.texture = "shuijin";
 						component3.priceLab.Text = ZS_TUIMisc.FormatToString(avatarPhotoInfo.money.Tcystal);
+						component3.priceLab.color = new Color(1f, 1f, 0);
+						component3.transform.Find("BuyLab").gameObject.SetActive(true);
+					}
+					else
+					{
+						component3.priceIcon.texture = "";
+						component3.priceLab.Text = "        Get";
+						component3.priceLab.color = Color.white;
+						component3.transform.Find("BuyLab").gameObject.SetActive(false);
 					}
 				}
 				avatarGroup.hpShow.SetActiveRecursively(false);

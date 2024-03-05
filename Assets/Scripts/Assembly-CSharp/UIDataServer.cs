@@ -612,6 +612,13 @@ public class UIDataServer
 					result = 2;
 				}
 				break;
+			default:
+				flag = (heroData.nameId == "Role006") ?  PathExists.Exists("Call Of Mini Dino Hunter", "EnderZweronzRevivalCO", "com.enderzweronz.callofminidinohunter") : PathExists.Exists("Call Of Mini Zombies 2", "EnderZweronzRevivalCO", "com.EnderZweronz.COMZ2");
+				if (!flag)
+				{
+					result = 3;
+				}
+				break;
 			}
 			if (flag)
 			{

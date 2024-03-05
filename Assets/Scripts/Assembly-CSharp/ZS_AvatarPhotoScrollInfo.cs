@@ -33,6 +33,8 @@ public class ZS_AvatarPhotoScrollInfo : MonoBehaviour
 
 	public GameObject NoCrystalBox;
 
+	public GameObject NoGameBox;
+
 	private Func<ZS_AvatarPhotoInfo, int> buyAvatarPhotoEvent;
 
 	private Func<ZS_AvatarPhotoInfo, int> useAvatarPhotoEvent;
@@ -52,6 +54,17 @@ public class ZS_AvatarPhotoScrollInfo : MonoBehaviour
 		component.contentLab.TextID = id;
 		component.mapShadow.transform.localScale = component.mapShadow.transform.localScale * 100000f;
 		NoCrystalBox.transform.localScale = NoCrystalBox.transform.localScale * 100000f;
+	}
+
+	private void showNoGame(string id, string url)
+	{
+		ZS_NotEnoughMoney component = NoGameBox.GetComponent<ZS_NotEnoughMoney>();
+		component.url = url;
+		component.contentLab.TextID = id;
+		//but WHY THOUGH
+		component.transform.Find("CancelBtn").Find("Lab").transform.localPosition = new Vector3(-0.7339706f, -1.986877f, -0.1500076f);
+		component.mapShadow.transform.localScale = component.mapShadow.transform.localScale * 100000f;
+		NoGameBox.transform.localScale = NoGameBox.transform.localScale * 100000f;
 	}
 
 	private void Start()
@@ -199,6 +212,10 @@ public class ZS_AvatarPhotoScrollInfo : MonoBehaviour
 			case 2:
 				ZS_UIAudioManager.PlayAudio(SoundKind.UI_popup);
 				showNotEnougtCrystal("Text033");
+				break;
+			case 3:
+				ZS_UIAudioManager.PlayAudio(SoundKind.UI_popup);
+				showNoGame(bindAvatarPhoto.name + "_1", bindAvatarPhoto.name == "Role006" ? "https://youtu.be/CzmFUZFdtbA?si=aMPE6hDUF9ZeL3hR" : "https://youtu.be/XtDSnARv3io?si=JDeLtYnLj8WiYO-I");
 				break;
 			}
 		}

@@ -69,6 +69,8 @@ public class ZS_AnimaitonPlay : MonoBehaviour
 		dictionary.Add("Light_saber", "avatar_ForceKninght@idle02");
 		dictionary.Add("Miners_hoe", "avatar_hoe@idle02");
 		dictionary.Add("saber", "avatar_saber@Idle02");
+		dictionary.Add("CrossBow", "Idle02");
+		dictionary.Add("BaseballBat", "idle01_0");
 		return dictionary;
 	}
 }
