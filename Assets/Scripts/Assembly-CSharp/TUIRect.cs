@@ -131,6 +131,6 @@ public class TUIRect : TUINeedUpdateBase
 		Vector3 vector = currentCamera.WorldToViewportPoint(new Vector3(rectWorld.xMin, rectWorld.yMax));
 		UpdateRect();
 		Vector3 vector2 = currentCamera.WorldToViewportPoint(new Vector3(rectWorld.xMax, rectWorld.yMin));
-		return new Vector4(vector.x, vector2.y, vector2.x, vector.y) * 2f - Vector4.one;
+		return new Vector4(vector.x, vector2.y, vector2.x, vector.y) * 2f - Vector4.one + (Application.platform == RuntimePlatform.WindowsPlayer ? new Vector4(0, 0.25f, 0, 0.25f) : Vector4.zero);
 	}
 }

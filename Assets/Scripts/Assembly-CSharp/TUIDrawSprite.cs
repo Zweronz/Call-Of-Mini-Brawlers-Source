@@ -119,7 +119,7 @@ public class TUIDrawSprite : MonoBehaviour
 			return;
 		}
 		Clipping clipping = clippingType;
-		if (clipping == Clipping.HardClip)
+		if (clipping == Clipping.HardClip && !Application.loadedLevelName.StartsWith("Scene"))
 		{
 			if (null == clipedMat)
 			{

@@ -31,10 +31,9 @@ Shader "Toon/Basic Outline" {
 		float3 norm = mul ((float3x3)UNITY_MATRIX_IT_MV, v.normal);
 		norm.x *= UNITY_MATRIX_P[0][0];
 		norm.y *= UNITY_MATRIX_P[1][1];
-    float outline = _Outline;
-    #if !UNITY_ANDROID
-    outline *= 30;
-    #endif
+		float outline = _Outline;
+		//REMOVE FOR NON ANDROID BUILDS
+		outline *= 3;
 		o.pos.xy += norm.xy * o.pos.z * outline;
 		o.color = _OutlineColor;
 		return o;
