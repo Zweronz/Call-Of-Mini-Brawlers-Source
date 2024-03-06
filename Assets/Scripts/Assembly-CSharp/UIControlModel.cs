@@ -151,28 +151,30 @@ public class UIControlModel : MonoBehaviour
 
 			if (Screen.lockCursor)
 			{
-				if (Input.GetMouseButton(0))
+				if (Input.GetMouseButton(0) && !simulateHoldMeleeAttack)
 				{
 					CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.Shoot, CharacterInputJudgment.InputType.Down);
 					simulateHoldShoot = true;
 				}
-				else if (simulateHoldMeleeAttack)
+				else if (simulateHoldShoot)
 				{
-					CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.MeleeAttack, CharacterInputJudgment.InputType.Up);
-					simulateHoldMeleeAttack = false;
+					CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.Shoot, CharacterInputJudgment.InputType.Up);
+					simulateHoldShoot = false;
 				}
+
 			}
 
-			if (Input.GetMouseButton(1))
+			if (Input.GetMouseButton(1) && !simulateHoldShoot)
 			{
 				CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.MeleeAttack, CharacterInputJudgment.InputType.Down);
 				simulateHoldMeleeAttack = true;
 			}
-			else if (simulateHoldShoot)
+			else if (simulateHoldMeleeAttack)
 			{
-				CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.Shoot, CharacterInputJudgment.InputType.Up);
-				simulateHoldShoot = false;
+				CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.MeleeAttack, CharacterInputJudgment.InputType.Up);
+				simulateHoldMeleeAttack = false;
 			}
+
 
 			if (Input.GetKeyDown(KeyCode.Alpha1))
 			{

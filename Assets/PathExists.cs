@@ -17,8 +17,9 @@ public static class PathExists
 				key.Close();
 				exists = true;
 			}
+
 		#elif UNITY_ANDROID
-			exists = Directory.Exists(Directory.GetParent(Application.persistentDataPath) + "/" + packageName);
+			exists = Directory.Exists(Directory.GetParent(Directory.GetParent(Application.persistentDataPath).FullName).FullName + "/" + packageName);
 		#endif
 
 		return exists;

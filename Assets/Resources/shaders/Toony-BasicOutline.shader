@@ -33,7 +33,7 @@ Shader "Toon/Basic Outline" {
 		norm.y *= UNITY_MATRIX_P[1][1];
 		float outline = _Outline;
 		//REMOVE FOR NON ANDROID BUILDS
-		outline *= 3;
+		outline *= 30;
 		o.pos.xy += norm.xy * o.pos.z * outline;
 		o.color = _OutlineColor;
 		return o;
