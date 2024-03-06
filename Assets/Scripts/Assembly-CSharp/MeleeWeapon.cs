@@ -9,6 +9,8 @@ public class MeleeWeapon : AWeapon<MeleeWeaponData>
 {
 	public Transform muzzle;
 
+	public FlameEmitter flameEmitter;
+
 	protected WeaponIntervalControl intervalControl;
 
 	protected WeaponInputJudgment inputJudgment;
@@ -38,6 +40,10 @@ public class MeleeWeapon : AWeapon<MeleeWeaponData>
 		if (list.Count > 0)
 		{
 			FightManager.Instance.Add(new MeleeFightBehavior(this, base.Owner, list.ToArray()));
+		}
+		if (flameEmitter != null)
+		{
+			flameEmitter.Emit();
 		}
 		EventCenter.Instance.Publish(this, new UseMeleeWeaponEvent(base.Data.id));
 	}
