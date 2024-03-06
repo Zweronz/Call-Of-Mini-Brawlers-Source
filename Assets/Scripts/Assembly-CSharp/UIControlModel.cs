@@ -136,5 +136,79 @@ public class UIControlModel : MonoBehaviour
 		{
 			SimulateHold(CharacterInputJudgment.ControlType.MeleeAttack);
 		}
+
+		if (!Application.isMobilePlatform)
+		{
+			if (Input.GetKeyDown(KeyCode.R))
+			{
+				HandleAvoid(null, 3, 0f, 0f, null);
+			}
+
+			if (Input.GetKeyDown(KeyCode.Tab))
+			{
+				HandleSwitchWeapon(null, 3, 0f, 0f, null);
+			}
+
+			if (Screen.lockCursor)
+			{
+				if (Input.GetMouseButton(0))
+				{
+					CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.Shoot, CharacterInputJudgment.InputType.Down);
+					simulateHoldShoot = true;
+				}
+				else if (simulateHoldMeleeAttack)
+				{
+					CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.MeleeAttack, CharacterInputJudgment.InputType.Up);
+					simulateHoldMeleeAttack = false;
+				}
+			}
+
+			if (Input.GetMouseButton(1))
+			{
+				CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.MeleeAttack, CharacterInputJudgment.InputType.Down);
+				simulateHoldMeleeAttack = true;
+			}
+			else if (simulateHoldShoot)
+			{
+				CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.Shoot, CharacterInputJudgment.InputType.Up);
+				simulateHoldShoot = false;
+			}
+
+			if (Input.GetKeyDown(KeyCode.Alpha1))
+			{
+				if (Player.Instance.Items.Count > 0)
+				{
+					GameUIItem gameUIItem = FindObjectOfType<GameUIItem>();
+					gameUIItem.HandleUseItem(gameUIItem.buttons[0], 3, 0f, 0f, null);
+				}
+			}
+
+			if (Input.GetKeyDown(KeyCode.Alpha2))
+			{
+				if (Player.Instance.Items.Count > 1)
+				{
+					GameUIItem gameUIItem = FindObjectOfType<GameUIItem>();
+					gameUIItem.HandleUseItem(gameUIItem.buttons[1], 3, 0f, 0f, null);
+				}
+			}
+
+			if (Input.GetKeyDown(KeyCode.Alpha3))
+			{
+				if (Player.Instance.Items.Count > 2)
+				{
+					GameUIItem gameUIItem = FindObjectOfType<GameUIItem>();
+					gameUIItem.HandleUseItem(gameUIItem.buttons[2], 3, 0f, 0f, null);
+				}
+			}
+
+			if (Input.GetKeyDown(KeyCode.Alpha4))
+			{
+				if (Player.Instance.Items.Count > 3)
+				{
+					GameUIItem gameUIItem = FindObjectOfType<GameUIItem>();
+					gameUIItem.HandleUseItem(gameUIItem.buttons[3], 3, 0f, 0f, null);
+				}
+			}
+		}
 	}
 }

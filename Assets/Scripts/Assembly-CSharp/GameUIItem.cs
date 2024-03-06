@@ -16,6 +16,9 @@ public class GameUIItem : MonoBehaviour
 	[SerializeField]
 	protected ITAudioEvent useItemAudio;
 
+	[HideInInspector]
+	public List<TUIControl> buttons;
+
 	public void Instantiate()
 	{
 		list.Clear(true);
@@ -28,7 +31,9 @@ public class GameUIItem : MonoBehaviour
 		{
 			if (!string.IsNullOrEmpty(item))
 			{
-				list.Add(CreateItemBtn(item));
+				TUIControl control = CreateItemBtn(item);
+				list.Add(control);
+				buttons.Add(control);
 			}
 		}
 	}
@@ -39,7 +44,7 @@ public class GameUIItem : MonoBehaviour
 		{
 			return;
 		}
-		string text = control.data as string;
+		string text = control == null ? data as string : control.data as string;
 		int itemCount = Player.Instance.GetItemCount(text);
 		if (itemCount > 0)
 		{
