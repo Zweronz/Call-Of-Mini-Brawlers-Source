@@ -60,6 +60,10 @@ public class SpecialIAPUIModel : MonoBehaviour
 
 	private void InitUI()
 	{
+		//yeah no
+		btn.Hide();
+		panel.Hide();
+		return;
 		if (Player.Instance.SpecialIAPTime > 0)
 		{
 			DateTime dateTime = new DateTime(Player.Instance.SpecialIAPTime);

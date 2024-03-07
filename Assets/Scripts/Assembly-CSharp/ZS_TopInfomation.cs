@@ -40,6 +40,8 @@ public class ZS_TopInfomation : MonoBehaviour
 
 	public TUIMeshSprite rewardFlagmSprit;
 
+	public TrollageBoard trollageBoard;
+
 	public static ZS_AvatarInfo avatar;
 
 	private void Awake()
@@ -148,16 +150,17 @@ public class ZS_TopInfomation : MonoBehaviour
 
 	private bool HandleAnniu()
 	{
-		IapBox.GetComponent<Animation>().Play("UI2");
-		blockMap.gameObject.active = true;
-		if (null != shadow)
-		{
-			shadow.transform.localScale = new Vector3(800f, 800f, 1f);
-		}
-		if (null != navShadow)
-		{
-			navShadow.transform.localScale = new Vector3(0.001f, 0.001f, 1f);
-		}
+		trollageBoard.gameObject.SetActive(true);
+		//IapBox.GetComponent<Animation>().Play("UI2");
+		//blockMap.gameObject.active = true;
+		//if (null != shadow)
+		//{
+		//	shadow.transform.localScale = new Vector3(800f, 800f, 1f);
+		//}
+		//if (null != navShadow)
+		//{
+		//	navShadow.transform.localScale = new Vector3(0.001f, 0.001f, 1f);
+		//}
 		return true;
 	}
 }
