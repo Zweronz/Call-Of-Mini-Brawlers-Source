@@ -10,6 +10,8 @@ public class UIControlModel : MonoBehaviour
 
 	private bool simulateHoldMeleeAttack;
 
+	private KeyCode? currentMainKey;
+
 	private void HandleForward(TUIControl control, int eventType, float wparam, float lparam, object data)
 	{
 		if (eventType == 1)
@@ -210,6 +212,43 @@ public class UIControlModel : MonoBehaviour
 					GameUIItem gameUIItem = FindObjectOfType<GameUIItem>();
 					gameUIItem.HandleUseItem(gameUIItem.buttons[3], 3, 0f, 0f, null);
 				}
+			}
+
+			if (Input.GetKey(KeyCode.A) && (currentMainKey == KeyCode.D || !Input.GetKey(KeyCode.D)))
+			{
+				if (currentMainKey == null || !Input.GetKey(currentMainKey.Value))
+				{
+					currentMainKey = KeyCode.A;
+				}
+
+				CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.Backward, CharacterInputJudgment.InputType.Down);
+				simulateHoldBackward = true;
+			}
+			else if (simulateHoldBackward)
+			{
+				CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.Backward, CharacterInputJudgment.InputType.Up);
+				simulateHoldBackward = false;
+			}
+
+			if (Input.GetKey(KeyCode.D) && (currentMainKey == KeyCode.A || !Input.GetKey(KeyCode.A)))
+			{
+				if (currentMainKey == null || !Input.GetKey(currentMainKey.Value))
+				{
+					currentMainKey = KeyCode.D;
+				}
+
+				CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.Forward, CharacterInputJudgment.InputType.Down);
+				simulateHoldForward = true;
+			}
+			else if (simulateHoldForward)
+			{
+				CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.Forward, CharacterInputJudgment.InputType.Up);
+				simulateHoldForward = false;
+			}
+
+			if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+			{
+				currentMainKey = null;
 			}
 		}
 	}

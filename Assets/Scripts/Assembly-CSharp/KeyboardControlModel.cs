@@ -16,6 +16,8 @@ public class KeyboardControlModel : MonoBehaviour
 
 	private void LateUpdate()
 	{
+		//nah.
+		return;
 		if (Input.GetKeyDown(shoot))
 		{
 			CharacterInputJudgment.Instance.HandleInputEvent(CharacterInputJudgment.ControlType.Shoot, CharacterInputJudgment.InputType.Down);
