@@ -41,6 +41,8 @@ public class Zombie : MonoBehaviour
 
 	private float timeOfRestoration;
 
+	private float crystalChance;
+
 	public EnemyBaseData Data
 	{
 		get
@@ -91,6 +93,11 @@ public class Zombie : MonoBehaviour
 		stiffBase = stiff;
 		deceleration = baseData.deceleration;
 		timeOfRestoration = baseData.timeOfRestoration;
+		crystalChance = 0.33f;
+		if (ArenaMission.Instance != null && ChooseMission.missionId == ArenaMission.Instance.ID && ArenaMissionUIModel.Meters > 0)
+		{
+			crystalChance = Mathf.Clamp(ArenaMissionUIModel.Meters / 100f, 0f, 100f);
+		}
 	}
 
 	public void Initialize(EnemyBaseData baseData, EnemyBaseHpDmgData baseDataEx, ArenaMissionData.EnemyRate enemyRate)
@@ -111,6 +118,11 @@ public class Zombie : MonoBehaviour
 		deceleration = baseData.deceleration * enemyRate.decelerationRate;
 		timeOfRestoration = baseData.timeOfRestoration * enemyRate.timeOfRestorationRate;
 		coefficientOfDamage = enemyRate.damageRate;
+		crystalChance = 0.33f;
+		if (ArenaMission.Instance != null && ChooseMission.missionId == ArenaMission.Instance.ID && ArenaMissionUIModel.Meters > 0)
+		{
+			crystalChance = Mathf.Clamp(ArenaMissionUIModel.Meters / 100f, 0f, 100f);
+		}
 	}
 
 	public void Appear(Transform point)
@@ -387,25 +399,37 @@ public class Zombie : MonoBehaviour
 	private void OnDead()
 	{
 		effectModel.OnDead();
+		SpawnCrystal();
 		Object.DestroyImmediate(base.gameObject);
 	}
 
 	private void OnMeleeDead()
 	{
 		effectModel.OnMeleeDead();
+		SpawnCrystal();
 		Object.DestroyImmediate(base.gameObject);
 	}
 
 	private void OnLaserDead()
 	{
 		effectModel.OnLaserDead();
+		SpawnCrystal();
 		Object.DestroyImmediate(base.gameObject);
 	}
 
 	private void OnFrozenDead()
 	{
 		effectModel.OnFrozenDead();
+		SpawnCrystal();
 		Object.DestroyImmediate(base.gameObject);
+	}
+
+	private void SpawnCrystal()
+	{
+		if (UnityEngine.Random.Range(0f, 100f) <= crystalChance)
+		{
+			Instantiate(ObjectCache.Instance.crystal, transform.position, Quaternion.identity);
+		}
 	}
 
 	private bool SufferDamage(float damage)

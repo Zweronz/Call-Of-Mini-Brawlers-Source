@@ -10,6 +10,8 @@ public class ArenaMissionUIModel : MissionUIModel<ArenaMission, ArenaMissionData
 
 	private Transform target;
 
+	public static int Meters;
+
 	public override void Initialize(ArenaMission data)
 	{
 		this.data = data;
@@ -20,11 +22,11 @@ public class ArenaMissionUIModel : MissionUIModel<ArenaMission, ArenaMissionData
 	private void LateUpdate()
 	{
 		Vector3 lhs = target.position - start.position;
-		int num = Mathf.FloorToInt(lhs.magnitude);
+		Meters = Mathf.FloorToInt(lhs.magnitude);
 		if (Vector3.Dot(lhs, start.forward) < 0f)
 		{
-			num = 0;
+			Meters = 0;
 		}
-		label.Text = num + "m";
+		label.Text = Meters + "m";
 	}
 }
